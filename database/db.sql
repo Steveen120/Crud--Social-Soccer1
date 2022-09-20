@@ -1,6 +1,6 @@
-CREATE DATABASE database_links;
+CREATE DATABASE rol_jugador;
 
-USE database_links;
+USE rol_jugador;
 
 CREATE TABLE users(
     id INT(11) NOT NULL
