@@ -17,7 +17,7 @@ ALTER TABLE users
 
 DESCRIBE users;
 
-DESCRIBE users;
+
     
 
 
