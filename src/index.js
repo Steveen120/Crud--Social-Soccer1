@@ -3,22 +3,23 @@ const morgan = require('morgan');
 const exphbs = require('express-handlebars');
 const path = require('path');
 const e = require('connect-flash');
+const { helpers } = require('handlebars');
 
 
 //initializations
 const app = express();
 
 // settings--Configuraciones
-app.set('port' , process.env.PORT || 4000);
-app.set('views', path.join(__dirname, 'views'));
-app.engine( '.hbs', exphbs({
-    defaultLayout: 'main', 
-    layoutsDir: path.join(app.get('views'), 'layouts'),
+app.set('port', process.env.PORT || 4000)
+app.set('views', path.join(__dirname, 'views'))
+app.engine('.hbs', exphbs({
+    defaultLayout: 'main',
+    layoutsDir:  path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs',
     helpers: require('./lib/handlebars')
-}))
-app.set('view engine', '.hbs');
+}));
+app.set('views engine', '.hbs');
 
 //Middlewares
 app.use(morgan('dev'));
@@ -29,18 +30,19 @@ app.use(express.json());
  app.use((req, res, next) =>  {
 
     next();
- })
+})
 
 // Routes
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
-app.use(require('./routes', require('./routes/links')));
+app.use('/links',require('./routes/links'));
 
+// Pulic--todo el codigo 
 
 // Pulic
-app.use(express.static(patch.join(__dirname, 'public')))
+app.use(express.static( path.join(__dirname, 'public')))
 
 // Starting the server
-app.listen(app.get('port'),() => {
+app.listen(app.get('port'), () => {
     console.log('Server on port', app.get('port'));
-})
+});

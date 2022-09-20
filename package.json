@@ -4,24 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "dev": "nodemon src/"
+    "dev": "nodemon src/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Joel7Anthony/Crud--Social-Soccer1.git"
+    "url": "git+https://github.com/Steveen120/Crud--Social-Soccer1.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Joel7Anthony/Crud--Social-Soccer1/issues"
+    "url": "https://github.com/Steveen120/Crud--Social-Soccer1/issues"
   },
-  "homepage": "https://github.com/Joel7Anthony/Crud--Social-Soccer1#readme",
+  "homepage": "https://github.com/Steveen120/Crud--Social-Soccer1#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "express": "^4.18.1",
-    "express-handlebars": "^6.0.6",
+    "express-handlebars": "^5.3.4",
+    "express-mysql": "^0.0.1",
     "express-mysql-session": "^2.1.8",
     "express-session": "^1.17.3",
     "express-validator": "^6.14.2",
@@ -32,6 +33,6 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.20"
   }
 }
