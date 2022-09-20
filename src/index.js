@@ -10,7 +10,7 @@ const { helpers } = require('handlebars');
 const app = express();
 
 // settings--Configuraciones
-app.set('port', process.env.PORT || 4000)
+app.set('port', process.env.PORT || 7770)
 app.set('views', path.join(__dirname, 'views'))
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
