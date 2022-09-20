@@ -10,16 +10,16 @@ const { helpers } = require('handlebars');
 const app = express();
 
 // settings--Configuraciones
-app.set('port', process.env.PORT || 7777)
+app.set('port', process.env.PORT || 3500)
 app.set('views', path.join(__dirname, 'views'))
 app.engine('.hbs', exphbs({
     defaultLayout: 'main',
-    layoutsDir:  path.join(app.get('views'), 'layouts'),
+    layoutsDir: path.join(app.get('views'), 'layouts'),
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs',
     helpers: require('./lib/handlebars')
-}));
-app.set('views engine', '.hbs');
+  }))
+  app.set('view engine', '.hbs');
 
 //Middlewares
 app.use(morgan('dev'));
