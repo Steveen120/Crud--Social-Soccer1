@@ -4,7 +4,7 @@ const router  = express.Router();
 const pool = require('../database');
 
 router.get('/add', (req, res)  => {
-    res.send('foun');
+    res.render('links/add');
 });
 
 module.exports = router;

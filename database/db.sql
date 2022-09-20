@@ -38,12 +38,22 @@ ALTER TABLE equipo
     ADD PRIMARY KEY (id);
 
 ALTER TABLE equipo
-    MODIFY idteam INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+    MODIFY id_equipo INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
     
-DESCRIBE users;
+DESCRIBE equipo;
+CREATE TABLE links(
+    id_equipo INT(11) NOT NULL,
+    nombreequipo VARCHAR(20) NOT NULL,
+    equipo_id_equipo INT(11),
+    created_at TIMESTAMP NOT NULL DEFAULT current_timestamp,
+    CONSTRAINT fk_equipo FOREIGN KEY (equioi_id_equipo) REFERENCES equipo(id_equipo)
+);
 
+ALTER TABLE links
+ADD PRIMARY KEY (id_equipo);
 
-
+ALTER TABLE links   
+ MODIFY id_equipo INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
 
 
 
