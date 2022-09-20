@@ -41,6 +41,3 @@ app.use(require('./routes', require('./routes/links')));
 app.use(express.static(patch.join(__dirname, 'public')))
 
 // Starting the server
-app.listen(app.get('port'),() => {
-    console.log('Server on port', app.get('port'));
-})
