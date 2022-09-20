@@ -2,11 +2,11 @@ CREATE DATABASE rol_jugador;
 
 USE rol_jugador;
 
-CREATE TABLE users(
-    id INT(11) NOT NULL,
-    username VARCHAR(16) NOT NULL,
-    password VARCHAR(60) NOT NULL, 
-    fullname VARCHAR(100) NOT NULL
+CREATE TABLE team(
+    idteam INT(11) NOT NULL,
+    ligabarial VARCHAR(16) NOT NULL,
+    nombreequipo VARCHAR(100) NOT NULL, 
+    
 );
 
 ALTER TABLE users
@@ -17,7 +17,27 @@ ALTER TABLE users
 
 DESCRIBE users;
 
-DESCRIBE users;
+
+
+
+CREATE TABLE estadisticas(
+    idestadisticas INT(11) NOT NULL,
+    ritmo_estadistica VARCHAR(16) NOT NULL,
+    tiro_estadistica VARCHAR(100) NOT NULL, 
+    pase_estadistica VARCHAR(100) NOT NULL, 
+    agilidad_estadistica VARCHAR(100) NOT NULL, 
+    defensa_estadistica VARCHAR(100) NOT NULL, 
+    fisico_estadistica VARCHAR(100) NOT NULL,     
+);
+
+CREATE TABLE team(
+    idteam INT(11) NOT NULL,
+    ligabarial VARCHAR(16) NOT NULL,
+    nombreequipo VARCHAR(100) NOT NULL, 
+    
+);
+
+
     
 
 
