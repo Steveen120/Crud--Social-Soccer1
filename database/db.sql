@@ -18,7 +18,7 @@ CREATE TABLE jugador(
     id_jugador INT(20) NOT NULL,
     nombrejugador VARCHAR(100) NOT NULL,
     apellidojugador VARCHAR(100) NOT NULL,
-    alturajugador VARCHAR(100) NOT NULL, ,
+    alturajugador VARCHAR(100) NOT NULL, 
     edadjugador  DECIMAL,  
 );
 
@@ -37,10 +37,9 @@ CREATE TABLE estadisticas(
 ALTER TABLE equipo
     ADD PRIMARY KEY (id);
 
-ALTER TABLE equipo
-    MODIFY id_equipo INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+
     
-DESCRIBE equipo;
+
 CREATE TABLE links(
     id_equipo INT(11) NOT NULL,
     nombreequipo VARCHAR(20) NOT NULL,
@@ -52,8 +51,7 @@ CREATE TABLE links(
 ALTER TABLE links
 ADD PRIMARY KEY (id_equipo);
 
-ALTER TABLE links   
- MODIFY id_equipo INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 1;
+
 
 
 
