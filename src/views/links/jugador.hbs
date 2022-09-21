@@ -3,18 +3,24 @@
         <div class="col-md-4 mx-auto">
             <div class="card ">
                 <div class="card-body">
-                    <form action="/links/add" method="POST">
+                    <form action="/links/jugador" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="title" placeholder="TItle" autofocus>                            
-                        </div>      
-                        <br>                  
-                        <div class="form-grou">
-                            <input type="url" name="url" class="form-control" placeholder="URL">
+                            <input type="text" class="form-control" name="jugador" placeholder="Jugador" autofocus>
                         </div>
-                        <br>
                         <div class="form-grou">
-                            <textarea name="descriptio" rows="2" class="form-control" placeholder="Description"></textarea>
+                            <input type="text" name="nombre jugador" class="form-control"
+                                placeholder="Nombre del Jugador">
                         </div>
+                        <div class="form-grou">
+                            <input type="text" name="apellido jugador" class="form-control" placeholder="Apellido del jugador">
+                        </div>
+                        <div class="form-grou">
+                            <input type="text" name="altura jugador" class="form-control" placeholder="Altura del jugador">
+                        </div>
+                        <div class="form-grou">
+                            <input type="text" name="edad jugador" class="form-control" placeholder="Edad del jugador">
+                        </div>
+
                         <div class="form-group">
                             <button class="btn btn-success btn-block"> Guardar</button>
                         </div>
