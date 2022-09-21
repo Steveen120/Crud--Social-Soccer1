@@ -5,17 +5,23 @@
                 <div class="card-body">
                     <form action="/links/equipo" method="POST">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="title" placeholder="TItle" autofocus>                            
+                            <h5>Nombre del Equipo</h5>
+                            <input type="text" class="form-control" name="equipo" placeholder="Nombre del Equipo" autofocus>                           
                         </div>      
                         <br>                  
                         <div class="form-grou">
-                            <input type="url" name="url" class="form-control" placeholder="URL">
+                            <h5>Nombre del Dueño</h5>
+                            <input type="text" name="dueño" class="form-control" placeholder="Nombre del dueño del equipo ">
                         </div>
-                        <br>
                         <div class="form-grou">
-                            <textarea name="descriptio" rows="2" class="form-control" placeholder="Description"></textarea>
+                            <br>
+                            <h5>Nombre del Entrenador</h5>
+                             <input type="text" name="entrenador" class="form-control" placeholder="Nombre del entrenador del equipo ">
                         </div>
-                        <div class="form-group">
+                            <br>
+                            <h5>Fecha de fundacion</h5>
+                            <input type="date" name="fecha"  class="form-control" placeholder="Fecha de fundacion ">
+                        </div>
                             <button class="btn btn-success btn-block"> Guardar</button>
                         </div>
                     </form>
