@@ -10,8 +10,9 @@ CREATE TABLE equipo(
 
 CREATE TABLE estadisticasEquipo(
     id_estadisticaequipo INT(20) NOT NULL,
-    valoracionequipo INTEGER ,
-    quimicaequipo INTEGER ,
+    valoracionequipo INTEGER,
+    quimicaequipo INTEGER,
+    triunfosequipo VARCHAR,
 );
 
 CREATE TABLE jugador(
