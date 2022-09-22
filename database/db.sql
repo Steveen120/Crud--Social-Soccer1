@@ -2,37 +2,36 @@ CREATE DATABASE rol_jugador;
 
 USE rol_jugador;
 
-CREATE TABLE equipo(
-    id_equipo INT(1078) NOT NULL,
+CREATE TABLE equipo(    
     nombreequipo VARCHAR(20) NOT NULL,
-        
+    nombredueño VARCHAR(20) NOT NULL,
+    nombreentrenador VARCHAR(20) NOT NULL,        
 );
 
-CREATE TABLE estadisticasEquipo(
-    id_estadisticaequipo INT(20) NOT NULL,
-    valoracionequipo INTEGER,
-    quimicaequipo INTEGER,
-    triunfosequipo VARCHAR,
+CREATE TABLE estadisticasEquipo(    
+    valoracionequipo VARCHAR(100) NOT NULL,
+    quimicaequipo INT(100) NOT NULL,
+    triunfosequipo INT(100) NOT NULL,
 );
 
 CREATE TABLE jugador(
-    id_jugador INT(20) NOT NULL,
+    id_jugador VARCHAR(4) NOT NULL,
     nombrejugador VARCHAR(100) NOT NULL,
     apellidojugador VARCHAR(100) NOT NULL,
-    alturajugador VARCHAR(100) NOT NULL, 
-    edadjugador  DECIMAL,  
+    alturajugador INT(100) NOT NULL, 
+    edadjugador  INT(100) NOT NULL,  
 );
 
 
 CREATE TABLE estadisticas(
-    id_estadisticas INT(11) NOT NULL,
-    id_jugador INTEGER,
-    ritmo_estadistica SERIAL(16) NOT NULL,
-    tiro_estadistica SERIAL(100) NOT NULL, 
-    pase_estadistica SERIAL(100) NOT NULL, 
-    agilidad_estadistica SERIAL(100) NOT NULL, 
-    defensa_estadistica SERIAL(100) NOT NULL, 
-    fisico_estadistica SERIAL(100) NOT NULL,     
+    id_jugador VARCHAR (100) NOT NULL,
+    id_estadisticas VARCHAR(50) NOT NULL,
+    ritmo_estadistica INT(16) NOT NULL,
+    tiro_estadistica INT(100) NOT NULL, 
+    pase_estadistica INT(100) NOT NULL, 
+    agilidad_estadistica INT(100) NOT NULL, 
+    defensa_estadistica INT(100) NOT NULL, 
+    fisico_estadistica INT(100) NOT NULL,     
 );  
 
 ALTER TABLE equipo
