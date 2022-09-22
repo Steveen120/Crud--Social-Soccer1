@@ -9,7 +9,8 @@ router.get('/jugador', (req, res)  => {
 });
 
 router.post('/jugador', (req, res ) => {
-    res.send('received')
+     console.log(req.body);
+    res.send('received');
 });
 //equipo//
 router.get('/equipo', (req, res)  => {
@@ -17,7 +18,8 @@ router.get('/equipo', (req, res)  => {
 });
 
 router.post('/equipo', (req, res ) => {
-    res.send('received')
+    console.log(req.body);
+    res.send('received');
 });
 
 //estadisticas//
@@ -26,7 +28,8 @@ router.get('/estadisticas', (req, res)  => {
 });
 
 router.post('/estadisticas', (req, res ) => {
-    res.send('received')
+    console.log(req.body);
+    res.send('received');
 });
 
 //estadisticasequipo//
@@ -35,6 +38,7 @@ router.get('/estadisticasequipo', (req, res)  => {
 });
 
 router.post('/estadisticasequipo', (req, res ) => {
-    res.send('received')
+    console.log(req.body);        
+    res.send('received');
 });
 module.exports = router; 
