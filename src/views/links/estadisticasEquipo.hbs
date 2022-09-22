@@ -4,29 +4,32 @@
             <div class="card ">
                 <div class="card-body">
                     <form action="/links/jugador" method="POST">
-                        <h5>Posición del Jugador</h5>
+                    
+                        <h5>Valoracion del Equipo</h5>
+                        <div >
+                            <select class="form-group">
+                                <option>Malo</option>
+                                <option>Regular</option>
+                                <option>Bueno</option>
+                                <option>Excelente</option>
+                                <option>Estrella</option>
+                            </select>
+                        </div>
+                        <br>
+                        <h5>Quimica del Equipo</h5>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="Posición jugador" placeholder="Posición del Jugador" autofocus>
+                            <input type="text" name="quimica" class="form-control"
+                                placeholder="Quimica del Equipo">
                         </div>
-                        <h5>Nombre del Jugador</h5>
-                        <div class="form-grou">
-                            <input type="text" name="nombre jugador" class="form-control"
-                                placeholder="Nombre del Jugador">
+                        <br>
+
+                        <br>
+                        <h5>Triunfos Del Equipo</h5>
+                        <div class="form-group">
+                            <input type="text" name="triunfo" class="form-control"
+                                placeholder="Triunfos Del Equipo">
                         </div>
-                        <h5>Apellido del jugador</h5>
-                        <div class="form-grou">
-                            <input type="text" name="apellido jugador" class="form-control"
-                                placeholder="Apellido del jugador">
-                        </div>
-                        <h5>Altura del jugador</h5>
-                        <div class="form-grou">
-                            <input type="text" name="altura jugador" class="form-control"
-                                placeholder="Altura del jugador">
-                        </div>
-                        <h5>Edad del jugador</h5>
-                        <div class="form-grou">
-                            <input type="text" name="edad jugador" class="form-control" placeholder="Edad del jugador">
-                        </div>
+                        <br>
                         <div class="form-group">
                             <button class="btn btn-success btn-block"> Guardar</button>
                         </div>
