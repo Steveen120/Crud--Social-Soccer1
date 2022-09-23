@@ -10,15 +10,15 @@ router.get("/jugador", (req, res) => {
 
 router.post("/jugador", async (req, res) => {
   const {
-    Posiciónjugador,
-    nombrejugador,
+    posicionjugador,
+    id_jugador,
     apellidojugador,
     alturajugador,
     edadjugador,
   } = req.body;
   const newLink = {
-    Posiciónjugador,
-    nombrejugador,
+    posicionjugador,
+    id_jugador,
     apellidojugador,
     alturajugador,
     edadjugador,
@@ -40,7 +40,7 @@ router.post("/equipo", async (req, res) => {
     entrenador,
     fecha,
   };
-  await pool.query(" INSERT INTO link set ?", [newLink]);
+  await pool.query(" INSERT INTO equipo set ?", [newLink]);
   res.send("received");
 });
 
@@ -51,26 +51,26 @@ router.get("/estadisticas", (req, res) => {
 
 router.post("/estadisticas", async (req, res) => {
   const {
-    Nombrejugador,
-    Estadísticas,
-    Ritmo,
-    Tiro,
-    Pase,
-    Agilidad,
-    Defensa,
-    Físico,
+    id_jugador,
+    id_estadisticas,
+    ritmo,
+    tiro,
+    pase,
+    agilidad,
+    defensa,
+    fisico,
   } = req.body;
   const newLink = {
-    Nombrejugador,
-    Estadísticas,
-    Ritmo,
-    Tiro,
-    Pase,
-    Agilidad,
-    Defensa,
-    Físico,
+    id_jugador,
+    id_estadisticas,
+    ritmo,
+    tiro,
+    pase,
+    agilidad,
+    defensa,
+    fisico,
   };
-  await pool.query(" INSERT INTO link set ?", [newLink]);
+  await pool.query(" INSERT INTO estadisticas set ?", [newLink]);
   res.send("received");
 });
 
@@ -80,13 +80,13 @@ router.get("/estadisticasequipo", (req, res) => {
 });
 
 router.post("/estadisticasequipo", async (req, res) => {
-  const { valoracion, quimica, triunfo } = req.body;
+  const { valoracionequipo, quimicaequipo, triunfosequipo } = req.body;
   const newLink = {
-    valoracion,
-    quimica,
-    triunfo,
+    valoracionequipo,
+    quimicaequipo,
+    triunfosequipo,
   };
-  await pool.query(" INSERT INTO link set ?", [newLink]);
+  await pool.query(" INSERT INTO estadisticasequipo set ?", [newLink]);
   res.send("received");
 });
 module.exports = router;

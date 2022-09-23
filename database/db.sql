@@ -3,41 +3,52 @@ CREATE DATABASE rol_jugador;
 USE rol_jugador;
 
 CREATE TABLE equipo(    
-    nombreequipo VARCHAR(20) NOT NULL,
-    nombredueño VARCHAR(20) NOT NULL,
-    nombreentrenador VARCHAR(20) NOT NULL,        
+    id INT(11) NOT NULL,
+    equipo VARCHAR(20) NOT NULL,
+    dueño VARCHAR(20) NOT NULL,
+    entrenador VARCHAR(20) NOT NULL        
 );
-
-CREATE TABLE estadisticasEquipo(    
-    valoracionequipo VARCHAR(100) NOT NULL,
-    quimicaequipo INT(100) NOT NULL,
-    triunfosequipo INT(100) NOT NULL,
-);
-
-CREATE TABLE jugador(
-    posicionjugador VARCHAR(4) NOT NULL,
-    nombrejugador VARCHAR(100) NOT NULL,
-    apellidojugador VARCHAR(100) NOT NULL,
-    alturajugador INT(100) NOT NULL, 
-    edadjugador  INT(100) NOT NULL,  
-);
-
-
-CREATE TABLE estadisticas(
-    id_jugador VARCHAR (100) NOT NULL,
-    id_estadisticas VARCHAR(50) NOT NULL,
-    ritmo_estadistica INT(16) NOT NULL,
-    tiro_estadistica INT(100) NOT NULL, 
-    pase_estadistica INT(100) NOT NULL, 
-    agilidad_estadistica INT(100) NOT NULL, 
-    defensa_estadistica INT(100) NOT NULL, 
-    fisico_estadistica INT(100) NOT NULL,     
-);  
 
 ALTER TABLE equipo
     ADD PRIMARY KEY (id);
 
 
+CREATE TABLE estadisticasEquipo(  
+    id INT(11) NOT NULL,  
+    valoracionequipo VARCHAR(100) NOT NULL,
+    quimicaequipo INT(100) NOT NULL,
+    triunfosequipo INT(100) NOT NULL
+);
+
+ALTER TABLE estadisticasEquipo
+    ADD PRIMARY KEY (id);
+
+CREATE TABLE jugador(
+    id INT(11) NOT NULL,
+    posicionjugador VARCHAR(4) NOT NULL,
+    nombrejugador VARCHAR(100) NOT NULL,
+    apellidojugador VARCHAR(100) NOT NULL,
+    alturajugador INT(100) NOT NULL, 
+    edadjugador  INT(100) NOT NULL 
+);
+
+ALTER TABLE jugador
+    ADD PRIMARY KEY (id);
+
+CREATE TABLE estadisticas(
+    id INT(11) NOT NULL,
+    id_jugador VARCHAR (100) NOT NULL,
+    id_estadisticas VARCHAR(50) NOT NULL,
+    ritmo INT(16) NOT NULL,
+    tiro INT(100) NOT NULL, 
+    pase INT(100) NOT NULL, 
+    agilidad INT(100) NOT NULL, 
+    defensa INT(100) NOT NULL, 
+    fisico INT(100) NOT NULL     
+);  
+
+ALTER TABLE estadisticas
+    ADD PRIMARY KEY (id);
     
 
 CREATE TABLE links(
