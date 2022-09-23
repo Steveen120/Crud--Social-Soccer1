@@ -3,10 +3,11 @@ CREATE DATABASE rol_jugador;
 USE rol_jugador;
 
 CREATE TABLE equipo(    
-    id INT(11) NOT NULL,
+    id SERIAL NOT NULL,
     equipo VARCHAR(20) NOT NULL,
     dueño VARCHAR(20) NOT NULL,
-    entrenador VARCHAR(20) NOT NULL        
+    entrenador VARCHAR(20) NOT NULL,
+    fundacion DATE       
 );
 
 ALTER TABLE equipo
@@ -14,7 +15,7 @@ ALTER TABLE equipo
 
 
 CREATE TABLE estadisticasEquipo(  
-    id INT(11) NOT NULL,  
+    id SERIAL NOT NULL,  
     valoracionequipo VARCHAR(100) NOT NULL,
     quimicaequipo INT(100) NOT NULL,
     triunfosequipo INT(100) NOT NULL
@@ -24,7 +25,7 @@ ALTER TABLE estadisticasEquipo
     ADD PRIMARY KEY (id);
 
 CREATE TABLE jugador(
-    id INT(11) NOT NULL,
+    id SERIAL  NOT NULL,
     posicionjugador VARCHAR(4) NOT NULL,
     nombrejugador VARCHAR(100) NOT NULL,
     apellidojugador VARCHAR(100) NOT NULL,
@@ -36,10 +37,10 @@ ALTER TABLE jugador
     ADD PRIMARY KEY (id);
 
 CREATE TABLE estadisticas(
-    id INT(11) NOT NULL,
-    id_jugador VARCHAR (100) NOT NULL,
-    id_estadisticas VARCHAR(50) NOT NULL,
-    ritmo INT(16) NOT NULL,
+    id SERIAL NOT NULL,
+    id_jugador INT (100) NOT NULL,
+    id_estadisticas INT (50) NOT NULL,
+    ritmo INT(100) NOT NULL,
     tiro INT(100) NOT NULL, 
     pase INT(100) NOT NULL, 
     agilidad INT(100) NOT NULL, 

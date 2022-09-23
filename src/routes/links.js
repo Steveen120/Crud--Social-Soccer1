@@ -11,14 +11,12 @@ router.get("/jugador", (req, res) => {
 router.post("/jugador", async (req, res) => {
   const {
     posicionjugador,
-    id_jugador,
     apellidojugador,
     alturajugador,
     edadjugador,
   } = req.body;
   const newLink = {
-    posicionjugador,
-    id_jugador,
+    posicionjugador,    
     apellidojugador,
     alturajugador,
     edadjugador,
