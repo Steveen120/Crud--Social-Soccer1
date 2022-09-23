@@ -15,7 +15,7 @@ CREATE TABLE estadisticasEquipo(
 );
 
 CREATE TABLE jugador(
-    id_jugador VARCHAR(4) NOT NULL,
+    posicionjugador VARCHAR(4) NOT NULL,
     nombrejugador VARCHAR(100) NOT NULL,
     apellidojugador VARCHAR(100) NOT NULL,
     alturajugador INT(100) NOT NULL, 
