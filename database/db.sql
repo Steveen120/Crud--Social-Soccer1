@@ -57,7 +57,7 @@ CREATE TABLE links(
     nombreequipo VARCHAR(20) NOT NULL,
     equipo_id_equipo INT(11),
     created_at TIMESTAMP NOT NULL DEFAULT current_timestamp,
-    CONSTRAINT fk_equipo FOREIGN KEY (equioi_id_equipo) REFERENCES equipo(id_equipo)
+    CONSTRAINT fk_equipo FOREIGN KEY (equipo_id_equipo) REFERENCES equipo(id_equipo)
 );
 
 ALTER TABLE links
