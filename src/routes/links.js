@@ -10,12 +10,14 @@ router.get("/jugador", (req, res) => {
 
 router.post("/jugador", async (req, res) => {
   const {
+    nombrejugador,
     posicionjugador,
     apellidojugador,
     alturajugador,
     edadjugador,
   } = req.body;
   const newLink = {
+    nombrejugador,
     posicionjugador,    
     apellidojugador,
     alturajugador,
@@ -24,6 +26,12 @@ router.post("/jugador", async (req, res) => {
   await pool.query(" INSERT INTO jugador set ?", [newLink]);
   res.send("received");
 });
+
+router.get('/', async (req, res) => {
+  const jugador = await pool.query('SELECT * FROM jugador'); 
+  res.render('links/list', {jugador});
+});
+
 
 //equipo//
 router.get("/equipo", (req, res) => {
@@ -41,6 +49,8 @@ router.post("/equipo", async (req, res) => {
   await pool.query(" INSERT INTO equipo set ?", [newLink]);
   res.send("received");
 });
+
+
 
 //estadisticas//
 router.get("/estadisticas", (req, res) => {
@@ -87,4 +97,7 @@ router.post("/estadisticasequipo", async (req, res) => {
   await pool.query(" INSERT INTO estadisticasequipo set ?", [newLink]);
   res.send("received");
 });
+
+
+
 module.exports = router;
