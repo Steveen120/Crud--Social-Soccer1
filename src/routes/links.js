@@ -14,23 +14,23 @@ router.post("/jugador", async (req, res) => {
     posicionjugador,
     apellidojugador,
     alturajugador,
-    edadjugador,
+    edadjugador
   } = req.body;
   const newLink = {
     nombrejugador,
     posicionjugador,    
     apellidojugador,
     alturajugador,
-    edadjugador,
+    edadjugador
   };
-  await pool.query(" INSERT INTO jugador set ?", [newLink]);
+  await pool.query('INSERT INTO jugador set ?', [newLink]);
   res.send("received");
 });
 
-router.get('/', async (req, res) => {
-  const jugador = await pool.query('SELECT * FROM jugador'); 
-  res.render('links/list', {jugador});
-});
+router.get('/listajugador', async (req, res) =>{
+  const jugador = await pool.query('SELECT *FROM  jugador');  
+  res.render('links/list', {jugador})
+})
 
 
 //equipo//
@@ -46,10 +46,14 @@ router.post("/equipo", async (req, res) => {
     entrenador,
     fecha,
   };
-  await pool.query(" INSERT INTO equipo set ?", [newLink]);
+  await pool.query('INSERT INTO equipo set ?' , [newLink]);
   res.send("received");
 });
 
+router.get('/listaequipo', async (req, res) =>{
+  const equipo = await pool.query('SELECT *FROM  equipo');  
+  res.render('links/list1', {equipo})
+})
 
 
 //estadisticas//
@@ -78,9 +82,14 @@ router.post("/estadisticas", async (req, res) => {
     defensa,
     fisico,
   };
-  await pool.query(" INSERT INTO estadisticas set ?", [newLink]);
+  await pool.query('INSERT INTO estadisticas set ?', [newLink]);
   res.send("received");
 });
+
+router.get('/listaestadisticas', async (req, res) =>{
+  const estadisticas = await pool.query('SELECT *FROM  estadisticas');  
+  res.render('links/list2', {estadisticas})
+})
 
 //estadisticasequipo//
 router.get("/estadisticasequipo", (req, res) => {
@@ -94,10 +103,13 @@ router.post("/estadisticasequipo", async (req, res) => {
     quimicaequipo,
     triunfosequipo,
   };
-  await pool.query(" INSERT INTO estadisticasequipo set ?", [newLink]);
+  await pool.query('INSERT INTO estadisticasequipo set ?', [newLink]);
   res.send("received");
 });
-
+router.get('/listaestadisticasequipo', async (req, res) =>{
+  const estadisticasequipo = await pool.query('SELECT *FROM  estadisticasequipo');  
+  res.render('links/list3', {estadisticasequipo})
+})
 
 
 module.exports = router;

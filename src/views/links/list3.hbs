@@ -1,18 +1,16 @@
 <div class="container p-4">
     <div class="row">
-        {{#each jugador}}
+        {{#each estadisticasequipo}}
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
                     <a href="{{url}}">
                         <h3 class="card text-uppercase">
-                            {{nombrejugador}}
+                            {{valoracionequipo}}
                         </h3>
                     </a>                    
-                    <p class="m-2">{{posicionjugador}}</p>
-                    <p class="m-2">{{apellidojugador}}</p>
-                    <p class="m-2">{{alturajugador}}</p>
-                    <p class="m-2">{{edadjugador}}</p> 
+                    <p class="m-2">{{quimicaequipo}}</p>
+                    <p class="m-2">{{triunfosequipo}}</p>
                     <a href="" class="btn btn-danger">Eliminar</a>
                     <a href="" class="btn btn-secondary">Editar</a>
 
@@ -23,4 +21,3 @@
         {{/each}}
     </div>
 </div>
-
