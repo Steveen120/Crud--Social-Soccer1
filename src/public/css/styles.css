@@ -1,5 +1,5 @@
 body {
-  background: #000000;
+  background: #ffffff;
   font-family: 'Times New Roman', Times, serif;
   overflow: hidden;
   height: 100vh;
@@ -11,11 +11,11 @@ body {
 }
 
 .navbar {
-  background: rgb(243, 243, 243) !important;
+  background: rgb(27, 140, 185) !important;
 }
 
 .nav-link {
-  color: rgb(37, 151, 226) !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .bg-image {
@@ -25,7 +25,7 @@ body {
   height: 100%;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)), url("/img/background.jpeg");
+  background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .9)), url("/img/");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
