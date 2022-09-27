@@ -28,10 +28,10 @@ router.post("/jugador", async (req, res) => {
 //mostrara las listas//
 router.get('/listajugador', async (req, res) =>{
   const jugador = await pool.query('SELECT *FROM  jugador');  
-  res.render('links/list', {jugador})
+  res.render('links/list-jugador', {jugador})
 })
 //eliminar jugador//
-router.get('/delete/:id', async(req, res) =>{
+router.get('/delete-jugador/:id', async(req, res) =>{
 const { id } = req.params;
 await pool.query('DELETE FROM jugador WHERE ID = ?', [id]);
 res.redirect('/links/listajugador');
@@ -56,10 +56,10 @@ router.post("/equipo", async (req, res) => {
 //mostrara las listas//
 router.get('/listaequipo', async (req, res) =>{
   const equipo = await pool.query('SELECT *FROM  equipo');  
-  res.render('links/list1', {equipo})
+  res.render('links/list-equipo', {equipo})
 })
 //eliminar equipo//
-router.get('/delete/:id', async(req, res) =>{
+router.get('/delete-equipo/:id', async(req, res) =>{
   const { id } = req.params;
   await pool.query('DELETE FROM equipo WHERE ID = ?', [id]);
   res.redirect('/links/listaequipo');
@@ -98,7 +98,7 @@ router.post("/estadisticas", async (req, res) => {
 //mostrara las listas//
 router.get('/listaestadisticas', async (req, res) =>{
   const estadisticas = await pool.query('SELECT *FROM  estadisticas');  
-  res.render('links/list2', {estadisticas})
+  res.render('links/list-estadisticas', {estadisticas})
 })
 //eliminar
 router.get('/delete/:id', async(req, res) =>{
@@ -125,7 +125,7 @@ router.post("/estadisticasequipo", async (req, res) => {
 //mostrara las listas//
 router.get('/listaestadisticasequipo', async (req, res) =>{
   const estadisticasequipo = await pool.query('SELECT *FROM  estadisticasequipo');  
-  res.render('links/list3', {estadisticasequipo})
+  res.render('links/list-estadisticasequipo', {estadisticasequipo})
 })
 
 router.get('/delete/:id', async(req, res) =>{
