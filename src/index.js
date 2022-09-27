@@ -4,6 +4,7 @@ const exphbs = require('express-handlebars');
 const path = require('path');
 const e = require('connect-flash');
 const { helpers } = require('handlebars');
+const flash = require('connect-flash');
 
 
 //initializations
@@ -25,6 +26,7 @@ app.engine('.hbs', exphbs({
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(flash());
 
 // Global Variables
  app.use((req, res, next) =>  {

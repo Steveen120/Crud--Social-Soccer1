@@ -1,5 +1,5 @@
 body {
-  background: #ffffff;
+  background: #079feb;
   font-family: 'Times New Roman', Times, serif;
   overflow: hidden;
   height: 100vh;
@@ -11,7 +11,10 @@ body {
 }
 
 .navbar {
-  background: rgb(11, 51, 66) !important;
+  background: rgb(110, 196, 227) !important;
+}
+.navbar-brand{
+  color: black;
 }
 
 .nav-link {
