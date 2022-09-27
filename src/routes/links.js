@@ -38,6 +38,10 @@ res.redirect('/links/listajugador');
 });
 
 
+
+
+
+
 //equipo//
 router.get("/equipo", (req, res) => {
   res.render("links/equipo");
@@ -100,14 +104,14 @@ router.get('/listaestadisticas', async (req, res) =>{
   const estadisticas = await pool.query('SELECT *FROM  estadisticas');  
   res.render('links/list-estadisticas', {estadisticas})
 })
-//eliminar
+//eliminar//
 router.get('/delete-estadisticas/:id', async(req, res) =>{
   const { id } = req.params;
   await pool.query('DELETE FROM estadisticas WHERE ID = ?', [id]);
   res.redirect('/links/listaestadisticas');
   });
 
-//Editar
+//Editar//
 router.get('/edit-estadisticas/:id', async (req, res) => {
   const { id } = req.params;
   console.log(id);
