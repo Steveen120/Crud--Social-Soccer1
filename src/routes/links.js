@@ -107,6 +107,14 @@ router.get('/delete-estadisticas/:id', async(req, res) =>{
   res.redirect('/links/listaestadisticas');
   });
 
+//Editar
+router.get('/edit-estadisticas/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  res.send('received');
+
+});
+
 //estadisticasequipo//
 router.get("/estadisticasequipo", (req, res) => {
   res.render("links/estadisticasequipo");
