@@ -36,6 +36,32 @@ const { id } = req.params;
 await pool.query('DELETE FROM jugador WHERE ID = ?', [id]);
 res.redirect('/links/listajugador');
 });
+//editar//
+router.get('/edit-jugador/:id', async(req, res) =>{
+const{ id } = req.params;
+const jugador = await pool.query('SELECT * FROM jugador WHERE id = ?', [id]);
+res.render('links/edit-jugador', {jugador: jugador[0]});
+});
+router.post('/edit-jugador/:id', async (req, res) =>{
+const {id} = req.params;
+const {
+  nombrejugador,
+  posicionjugador,
+  apellidojugador,
+  alturajugador,
+  edadjugador
+} = req.body;
+const newLink = {
+  nombrejugador,
+  posicionjugador,    
+  apellidojugador,
+  alturajugador,
+  edadjugador
+};
+console.log(newLink); 
+res.send('UPDATED');
+});
+
 
 
 //equipo//
@@ -65,6 +91,24 @@ router.get('/delete-equipo/:id', async(req, res) =>{
   res.redirect('/links/listaequipo');
   });
 
+//editar//
+router.get('/edit-equipo/:id', async(req, res) =>{
+  const{ id } = req.params;
+  const equipo = await pool.query('SELECT * FROM equipo WHERE id = ?', [id]);
+  res.render('links/edit-equipo', {equipo: equipo[0]});
+  });
+  router.get('/edit-equipo/:id', async (req, res) =>{
+  const {id} = req.params;
+  const { equipo, dueño, entrenador, fecha } = req.body;
+  const newLink = {
+    equipo,
+    dueño,
+    entrenador,
+    fecha,
+  };
+  console.log(newLink); 
+  res.send('UPDATED');
+  });
 
 
 //estadisticas//
