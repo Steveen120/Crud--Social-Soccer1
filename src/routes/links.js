@@ -114,9 +114,9 @@ router.get('/delete-estadisticas/:id', async(req, res) =>{
 //Editar//
 router.get('/edit-estadisticas/:id', async (req, res) => {
   const { id } = req.params;
-  console.log(id);
-  res.send('received');
-
+  const estadisticas = await pool.query ('SELECT * FROM estadisticas WHERE id = ?', [id]);
+  console.log(links);
+  res.render ('links/estadistica' , {link: links });
 });
 
 //estadisticasequipo//
