@@ -111,6 +111,7 @@ router.post('/edit-equipo/:id', async ( req, res ) => {
     fecha, };
   console.log(newLink);
   await pool.query('UPDATE equipo set ? WHERE id = ?', [newLink, id]);
+  req.flash('éxito, comentario guardado correctamente');
   res.redirect('/links/listaequipo');
 });
 
