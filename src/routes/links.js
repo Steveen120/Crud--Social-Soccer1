@@ -97,7 +97,7 @@ router.get('/edit-equipo/:id', async(req, res) =>{
   const equipo = await pool.query('SELECT * FROM equipo WHERE id = ?', [id]);
   res.render('links/edit-equipo', {equipo: equipo[0]});
   });
-  router.get('/edit-equipo/:id', async (req, res) =>{
+  router.post('/edit-equipo/:id', async (req, res) =>{
   const {id} = req.params;
   const { equipo, dueño, entrenador, fecha } = req.body;
   const newLink = {
