@@ -59,7 +59,8 @@ const newLink = {
   edadjugador
 };
 console.log(newLink); 
-res.send('UPDATED');
+await pool.query('UPDATE jugador set ? WHERE id = ?',[newLink, id]);
+res.redirect('/links/listajugador');
 });
 
 
@@ -107,7 +108,8 @@ router.get('/edit-equipo/:id', async(req, res) =>{
     fecha,
   };
   console.log(newLink); 
-  res.send('UPDATED');
+  await pool.query('UPDATE equipo set ? WHERE id = ?' [newLink, id]);
+  res.redirect('/links/listaequipo');
   });
 
 
