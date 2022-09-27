@@ -101,7 +101,7 @@ router.get('/listaestadisticas', async (req, res) =>{
   res.render('links/list-estadisticas', {estadisticas})
 })
 //eliminar
-router.get('/delete/:id', async(req, res) =>{
+router.get('/delete-estadisticas/:id', async(req, res) =>{
   const { id } = req.params;
   await pool.query('DELETE FROM estadisticas WHERE ID = ?', [id]);
   res.redirect('/links/listaestadisticas');
@@ -127,8 +127,8 @@ router.get('/listaestadisticasequipo', async (req, res) =>{
   const estadisticasequipo = await pool.query('SELECT *FROM  estadisticasequipo');  
   res.render('links/list-estadisticasequipo', {estadisticasequipo})
 })
-
-router.get('/delete/:id', async(req, res) =>{
+//eliminar estadisticasequipo//
+router.get('/delete-estadisticasequipo/:id', async(req, res) =>{
   const { id } = req.params;
   await pool.query('DELETE FROM estadisticasequipo WHERE ID = ?', [id]);
   res.redirect('/links/listaestadisticasequipo');
