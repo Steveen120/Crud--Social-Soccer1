@@ -3,27 +3,27 @@
         <div class="col-md-4 mx-auto">
             <div class="card ">
                 <div class="card-body">
-                    <form action="/links/edit-equipo/:{equipo.id}" method="POST">
+                    <form action="/links/edit-teams/:{{teams.id}}" method="POST">
                         <div class="form-group">
                             <h5 class="mt-3">Nombre del Equipo</h5>
-                            <input type="text" value="{{equipo.equipo}}" class="form-control" name="equipo" placeholder="Nombre del Equipo"
+                            <input type="text" value="{{teams.squad}}" class="form-control" name="squad" placeholder="Nombre del Equipo"
                                autofocus>
                         </div>
                         <br>
                         <div class="form-grou">
                             <h5 class="mt-3">Nombre del Dueño</h5>
-                            <input type="text" value="{{equipo.dueño}}" name="dueño" class="form-control"
+                            <input type="text" value="{{teams.boss}}" name="boss" class="form-control"
                                 placeholder="Nombre del dueño del equipo ">
                         </div>
                         <div class="form-grou">
                             <br>
                             <h5 class="mt-3">Nombre del Entrenador</h5>
-                            <input type="text" value="{{equipo.entrenador}}" name="entrenador" class="form-control"
+                            <input type="text" value="{{teams.coach}}" name="coach" class="form-control"
                                 placeholder="Nombre del entrenador del equipo ">
                         </div>
                         <br>
                         <h5 class="mt-3">Fecha de fundacion</h5>
-                        <input type="date" value="{{equipo.fecha}}" name="fecha" class="form-control" placeholder="Fecha de fundacion ">
+                        <input type="date" value="{{teams.foundation}}" name="foundation" class="form-control" placeholder="Fecha de fundacion ">
 
                         <div class="form-group mt-3 d-grid">
                             <button type="submit" class="btn btn-success btn-block"> Guardar</button>

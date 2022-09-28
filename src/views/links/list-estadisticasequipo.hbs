@@ -1,14 +1,14 @@
 <div class="container p-4">
     <div class="row">
-        {{#each estadisticasequipo}}
+        {{#each teamstats}}
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
                     <h3 class="card text-uppercase">
-                        {{valoracionequipo}}
+                        {{teamvaluation}}
                     </h3>
-                    <p class="m-2">{{quimicaequipo}}</p>
-                    <p class="m-2">{{triunfosequipo}}</p>
+                    <p class="m-2">{{teamchemistry }}</p>
+                    <p class="m-2">{{teamwins }}</p>
                     <a href="/links/delete-estadisticasequipo/{{id}}" class="btn btn-danger">Eliminar</a>
                     <a href="" class="btn btn-secondary">Editar</a>
 

@@ -40,6 +40,8 @@ app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
 app.use('/players',require('./routes/players.router'));
+app.use('/temas',require('./routes/teams.router'));
+
 
 
 

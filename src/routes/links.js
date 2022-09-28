@@ -20,52 +20,19 @@ router.get('/delete-players/:id', playersController.deletePlayer);
 
 
 
-
 //equipo//
-router.get("/teams", teamsController.getListTeams);
-router.post("/equipo", async (req, res) => {
-  const { equipo, dueño, entrenador, fecha } = req.body;
-  const newLink = {
-    equipo,
-    dueño,
-    entrenador,
-    fecha,
-  };
-  await pool.query('INSERT INTO equipo set ?' , [newLink]);
-  res.redirect("listaequipo");
-});
-//mostrara las listas//
-router.get('/listaequipo', async (req, res) =>{
-  const equipo = await pool.query('SELECT *FROM  equipo');  
-  res.render('links/list-equipo', {equipo})
+router.get("/team/teams", teamsController.getListTeams);
+router.post("/team/teams", teamsController.postTeams);
+//lista//
+router.get('/team/list-players', async (req, res) =>{
+  const players = await pool.query('SELECT * FROM  players');  
+  res.render('links/player/list-players', {players})
 })
-//eliminar equipo//
-router.get('/delete-equipo/:id', async(req, res) =>{
-  const { id } = req.params;
-  await pool.query('DELETE FROM equipo WHERE ID = ?', [id]);
-  res.redirect('/links/listaequipo');
-  });
 
-//editar equipo//
-router.get('/edit-equipo/:id', async(req, res) =>{
-  const{ id } = req.params;
-  const equipo = await pool.query('SELECT * FROM equipo WHERE id = ?', [id]);
-  res.render('links/edit-equipo', {equipo: equipo[0]});
-  });
 
-  router.post('/edit-equipo/:id', async (req, res) =>{
-  const {id} = req.params;
-  const { equipo, dueño, entrenador, fecha } = req.body;
-  const newLink = {
-    equipo,
-    dueño,
-    entrenador,
-    fecha,
-  };
-console.log(newLink);
-await pool.query('UPDATE equipo set ? WHERE id = ?',[newLink, id]);
-res.redirect('/links/listaequipo');
-});
+
+
+
 
 
 //estadisticas//

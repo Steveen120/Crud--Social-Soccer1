@@ -6,14 +6,14 @@ const statistics =(sequelize, type) =>{
             autoIncrement: true,
         },
 
-        id_jugador: type.STRING, 
-        id_estadisticas: type.STRING,
-        ritmo: type.STRING,
-        tiro: type.STRING,
-        pase: type.STRING,
-        agilidad: type.STRING,
-        defensa: type.STRING,
-        fisico: type.STRING,
+        id_player: type.STRING, 
+        id_statistic: type.STRING,
+        swing: type.STRING,
+        threw: type.STRING,
+        happens: type.STRING,
+        agility: type.STRING,
+        defending: type.STRING,
+        physical: type.STRING,
 
         createStatistics:{
             type: 'TIMESTAMP',

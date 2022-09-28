@@ -6,11 +6,10 @@ const teams =(sequelize, type) =>{
             autoIncrement: true,
         },
 
-        equipo: type.STRING, 
-        dueño: type.STRING,
-        entrenador: type.STRING,
-        alturajugador: type.STRING,
-        fundacion: type.STRING,
+        squad: type.STRING, 
+        boss: type.STRING,
+        coach: type.STRING,
+        foundation: type.STRING,
 
         createTeams:{
             type: 'TIMESTAMP',

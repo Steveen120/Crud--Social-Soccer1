@@ -6,11 +6,11 @@ const players =(sequelize, type) =>{
             autoIncrement: true,
         },
 
-        posicionjugador: type.STRING, 
-        nombrejugador: type.STRING,
-        apellidojugador: type.STRING,
-        alturajugador: type.STRING,
-        edadjugador: type.STRING,
+        playerposition: type.STRING, 
+        playername: type.STRING,
+        surnameplayer: type.STRING,
+        playerheight: type.STRING,
+        playerage: type.STRING,
 
         createPlayers:{
             type: 'TIMESTAMP',

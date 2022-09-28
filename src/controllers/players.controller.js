@@ -9,18 +9,18 @@ Players.getListPlayers = (req, res) => {
 
 Players.postPlayer = async(req, res) =>{    
     const {
-      nombrejugador,
-      posicionjugador,
-      apellidojugador,
-      alturajugador,
-      edadjugador
+      playername,
+      playerposition,
+      surnameplayer,
+      playerheight,
+      playerage
     } = req.body;
     const newLink = {
-      nombrejugador,
-      posicionjugador,    
-      apellidojugador,
-      alturajugador,
-      edadjugador
+      playername,
+      playerposition,    
+      surnameplayer,
+      playerheight,
+      playerage
     };
     await pool.query('INSERT INTO players set ?', [newLink]);
     res.redirect("/players/list-players");

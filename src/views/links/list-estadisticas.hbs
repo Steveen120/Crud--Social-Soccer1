@@ -1,19 +1,19 @@
 <div class="container p-4">
     <div class="row">
-        {{#each estadisticas}}
+        {{#each statistic}}
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
                     <h3 class="card text-uppercase">
-                        {{id_jugador}}
+                        {{id_player}}
                     </h3>
-                    <p class="m-2">{{id_estadisticas}}</p>
-                    <p class="m-2">{{ritmo}}</p>
-                    <p class="m-2">{{tiro}}</p>
-                    <p class="m-2">{{pase}}</p>
-                    <p class="m-2">{{agilidad}}</p>
-                    <p class="m-2">{{defensa}}</p>
-                    <p class="m-2">{{fisico}}</p>
+                    <p class="m-2">{{id_statistic }}</p>
+                    <p class="m-2">{{swing }}</p>
+                    <p class="m-2">{{threw }}</p>
+                    <p class="m-2">{{happens }}</p>
+                    <p class="m-2">{{agility}}</p>
+                    <p class="m-2">{{defending}}</p>
+                    <p class="m-2">{{physical }}</p>
                     <a href="/links/delete-estadisticas/{{id}}" class="btn btn-danger">Eliminar</a>
                     <a href="/links/edit-estadisticas/{{id}}" class="btn btn-secondary">Editar</a>
 

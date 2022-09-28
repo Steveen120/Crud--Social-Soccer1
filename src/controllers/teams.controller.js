@@ -1,11 +1,28 @@
 const pool = require("../config/database");
+const teams = require("../models/team.model");
 
-const Teams={}
+const Teams = {};
 
 Teams.getListTeams = (req, res) => {
-    res.render("links/equipo")
+  res.render("links/team/teams");
 };
 
+Teams.postTeams = async (req, res) => {
+  const { squad, boss, coach, foundation } = req.body;
+  const newLink = {
+    squad,
+    boss,
+    coach,
+    foundation,
+  };
+  await pool.query("INSERT INTO teams set ?", [newLink]);
+  res.redirect("/teams/list-teams");
+};
 
+Teams.deleteTeams = async (req, res) => {
+  const { id } = req.params;
+  await pool.query("DELETE FROM teams WHERE ID = ?", [id]);
+  res.redirect("/teams/list-teams");
+};
 
-module.exports=Teams
+module.exports = Teams;

@@ -6,9 +6,9 @@ const teamstats =(sequelize, type) =>{
             autoIncrement: true,
         },
 
-        valoracionequipo: type.STRING, 
-        quimicaequipo: type.STRING,
-        triunfosequipo: type.STRING,
+        teamvaluation: type.STRING, 
+        teamchemistry: type.STRING,
+        teamwins: type.STRING,
 
         createTeamstats:{
             type: 'TIMESTAMP',

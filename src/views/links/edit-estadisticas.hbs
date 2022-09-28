@@ -3,39 +3,39 @@
         <div class="col-md-4 mx-auto">
             <div class="card ">
                 <div class="card-body">
-                    <form action="/links/edit-estadisticas/:{{estadisticas.id}}" method="POST">
+                    <form action="/links/edit-estadisticas/:{{statistics.id}}" method="POST">
                     <h5 class="mt-3">Nombre del Jugador</h5>
                         <div class="form-group">
-                            <input type="text" value="{{estadisticas.id_jugador}}" class="form-control" name="id_jugador" placeholder="Nombre del Jugador" autofocus>
+                            <input type="text" value="{{statistics.id_player}}" class="form-control" name="id_player" placeholder="Nombre del Jugador" autofocus>
                         </div>
                         <h5 class="mt-3">Tipo del Jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.id_estadisticas}}" name="id_estadisticas" class="form-control"
+                            <input type="text" value="{{statistics.id_statistics}}" name="id_statistics" class="form-control"
                                 placeholder="Tipo del Jugador">
                         </div>
                         <h5 class="mt-3">Ritmo del jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.ritmo}}" name="ritmo" class="form-control" placeholder="Ritmo del jugador">
+                            <input type="text" value="{{statistics.swing}}" name="swing" class="form-control" placeholder="Ritmo del jugador">
                         </div>
                         <h5 class="mt-3">Tiro del jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.tiro}}" name="tiro" class="form-control" placeholder="Tiro del jugador">
+                            <input type="text" value="{{statistics.threw}}" name="threw" class="form-control" placeholder="Tiro del jugador">
                         </div>
                         <h5 class="mt-3">Pase del jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.pase}}" name="pase" class="form-control" placeholder="Pase del jugador">
+                            <input type="text" value="{{statistics.happens}}" name="happens" class="form-control" placeholder="Pase del jugador">
                         </div>
                         <h5 class="mt-3">Agilidad del jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.agilidad}}" name="agilidad" class="form-control" placeholder="Agilidad del jugador">
+                            <input type="text" value="{{statistics.agility}}" name="agility" class="form-control" placeholder="Agilidad del jugador">
                         </div>
                         <h5 class="mt-3">Defensa del jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.defensa}}" name="defensa" class="form-control" placeholder="Defensa del jugador">
+                            <input type="text" value="{{statistics.defending}}" name="defending" class="form-control" placeholder="Defensa del jugador">
                         </div>
                         <h5 class="mt-3">Físico del jugador</h5>
                         <div class="form-grou">
-                            <input type="text" value="{{estadisticas.fisico}}" name="fisico" class="form-control" placeholder="Físico del jugador">
+                            <input type="text" value="{{statistics.physical}}" name="physical" class="form-control" placeholder="Físico del jugador">
                         </div>
                         <div class="form-group mt-3 d-grid">
                             <button  type="submit" class="btn btn-success btn-block"> Guardar</button>
