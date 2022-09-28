@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const playersController = require('../controllers/players.controller');
+const teamsController = require('../controllers/teams.controller');
 
 const pool = require("../config/database");
 
@@ -66,9 +67,7 @@ res.redirect('/links/listajugador');
 
 
 //equipo//
-router.get("/equipo", (req, res) => {
-  res.render("links/equipo");
-});
+router.get("/teams", teamsController.getListTeams);
 router.post("/equipo", async (req, res) => {
   const { equipo, dueño, entrenador, fecha } = req.body;
   const newLink = {

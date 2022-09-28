@@ -15,6 +15,7 @@ mysql.createConnection({
 })
 
 const playersModel = require('../models/player.model');
+const teamsModel = require('../models/team.model');
 
 
 const sequelize = new Sequelize(
@@ -47,6 +48,7 @@ sequelize.sync({ force: false })
   })
 
 const players = playersModel(sequelize, Sequelize);
+const teams = teamsModel(sequelize, Sequelize);
 
 
 
@@ -54,5 +56,6 @@ const players = playersModel(sequelize, Sequelize);
 
 
 module.exports = {
-  players
+  players,
+  teams
 }
