@@ -1,12 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const playersController = require('../controllers/players.controller');
 
-const pool = require("../database");
+const pool = require("../config/database");
 
 //jugador//
-router.get("/jugador", (req, res) => {
-  res.render("links/jugador");
-});
+router.get("/players", playersController.getListPlayers);
 router.post("/jugador", async (req, res) => {
   const {
     nombrejugador,

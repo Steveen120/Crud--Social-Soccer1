@@ -5,6 +5,7 @@ const path = require('path');
 const e = require('connect-flash');
 const { helpers } = require('handlebars');
 const flash = require('connect-flash');
+const orm = require('./config/database.orm')
 
 
 //initializations

@@ -3,6 +3,6 @@ module.exports = {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'rol_jugador' 
+        database: 'social_soccer_player' 
     }
 }
