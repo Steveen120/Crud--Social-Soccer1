@@ -1,5 +1,5 @@
 body {
-  background: #079feb;
+  background: #d2d5d6;
   font-family: 'Times New Roman', Times, serif;
   overflow: hidden;
   height: 100vh;
@@ -11,7 +11,7 @@ body {
 }
 
 .navbar {
-  background: rgb(110, 196, 227) !important;
+  background: rgb(143, 150, 153) !important;
 }
 .navbar-brand{
   color: black;

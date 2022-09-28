@@ -1,6 +1,6 @@
 <div class="container p-4">
     <div class="row">
-        {{#each jugador}}
+        {{#each players}}
         <div class="col-md-3">
             <div class="card text-center">
                 <div class="card-body">
@@ -11,8 +11,8 @@
                     <p class="m-2">{{posicionjugador}}</p>
                     <p class="m-2">{{alturajugador}}</p>
                     <p class="m-2">{{edadjugador}}</p>
-                    <a href="/links/delete-jugador/{{id}}" class="btn btn-danger">Eliminar</a>
-                    <a href="/links/edit-jugador/{{id}}" class="btn btn-secondary">Editar</a>
+                    <a href="/links/delete-players/{{id}}" class="btn btn-danger">Eliminar</a>
+                    <a href="/links/edit-players/{{id}}" class="btn btn-secondary">Editar</a>
 
                 </div>
             </div>
@@ -21,7 +21,7 @@
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
                 <p>No hay registro guardados a un </p>
-                <a href="/links/jugador"> Agrega uno haciendo click aqui</a>
+                <a href="/players"> Agrega uno haciendo click aqui</a>
             </div>
         </div>
         {{/each}}

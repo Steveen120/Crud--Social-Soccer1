@@ -55,7 +55,11 @@ const teamstats = teamstatsModel(sequelize, Sequelize);
 
 
 //Relaciones 
+players.hasMany(teams)
+teams.belongsTo(players)
 
+teamstats.hasMany(teams)
+teams.belongsTo(teamstats)
 
 module.exports = {
   players,

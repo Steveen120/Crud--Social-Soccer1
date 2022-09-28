@@ -3,67 +3,21 @@ const router = express.Router();
 const playersController = require('../controllers/players.controller');
 const teamsController = require('../controllers/teams.controller');
 const statisticsController = require('../controllers/statistics.controller');
-const teamstatsController = require('../controllers/teamstats.contrller')
+const teamstatsController = require('../controllers/teamstats.controller')
 const pool = require("../config/database");
 
 //jugador//
-router.get("/players", playersController.getListPlayers);
-router.post("/jugador", async (req, res) => {
-  const {
-    nombrejugador,
-    posicionjugador,
-    apellidojugador,
-    alturajugador,
-    edadjugador
-  } = req.body;
-  const newLink = {
-    nombrejugador,
-    posicionjugador,    
-    apellidojugador,
-    alturajugador,
-    edadjugador
-  };
-  await pool.query('INSERT INTO jugador set ?', [newLink]);
-  res.redirect("listajugador");
-});
+router.get("/player/players", playersController.getListPlayers);
+router.post("/player/players", playersController.postPlayer);
 //mostrara las listas//
-router.get('/listajugador', async (req, res) =>{
-  const jugador = await pool.query('SELECT *FROM  jugador');  
-  res.render('links/list-jugador', {jugador})
+router.get('/player/list-players', async (req, res) =>{
+  const players = await pool.query('SELECT * FROM  players');  
+  res.render('links/player/list-players', {players})
 })
 //eliminar jugador//
-router.get('/delete-jugador/:id', async(req, res) =>{
-const { id } = req.params;
-await pool.query('DELETE FROM jugador WHERE ID = ?', [id]);
-res.redirect('/links/listajugador');
-});
+router.get('/delete-players/:id', playersController.deletePlayer);
 //editar//
-router.get('/edit-jugador/:id', async(req, res) =>{
-const{ id } = req.params;
-const jugador = await pool.query('SELECT * FROM jugador WHERE id = ?', [id]);
-res.render('links/edit-jugador', {jugador: jugador[0]});
-});
-router.post('/edit-jugador/:id', async (req, res) =>{
-const {id} = req.params;
 
-const {
-  nombrejugador,
-  posicionjugador,
-  apellidojugador,
-  alturajugador,
-  edadjugador
-} = req.body;
-const newLink = {
-  nombrejugador,
-  posicionjugador,    
-  apellidojugador,
-  alturajugador,
-  edadjugador
-};
-console.log(newLink);
-await pool.query('UPDATE jugador set ? WHERE id = ?',[newLink, id]);
-res.redirect('/links/listajugador');
-});
 
 
 

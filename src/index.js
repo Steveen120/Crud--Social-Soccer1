@@ -39,6 +39,8 @@ app.use(flash());
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
+app.use('/players',require('./routes/players.router'));
+
 
 
 // Pulic--todo el codigo 
