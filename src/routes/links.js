@@ -58,7 +58,7 @@ const newLink = {
   alturajugador,
   edadjugador
 };
-console.log(newLink); 
+console.log(newLink);
 await pool.query('UPDATE jugador set ? WHERE id = ?',[newLink, id]);
 res.redirect('/links/listajugador');
 });
@@ -107,10 +107,10 @@ router.get('/edit-equipo/:id', async(req, res) =>{
     entrenador,
     fecha,
   };
-  console.log(newLink); 
-  await pool.query('UPDATE equipo set ? WHERE id = ?' [newLink, id]);
-  res.redirect('/links/listaequipo');
-  });
+console.log(newLink);
+await pool.query('UPDATE equipo set ? WHERE id = ?',[newLink, id]);
+res.redirect('/links/listaequipo');
+});
 
 
 //estadisticas//
