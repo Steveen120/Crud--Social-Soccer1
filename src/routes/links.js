@@ -2,7 +2,8 @@ const express = require("express");
 const router = express.Router();
 const playersController = require('../controllers/players.controller');
 const teamsController = require('../controllers/teams.controller');
-
+const statisticsController = require('../controllers/statistics.controller');
+const teamstatsController = require('../controllers/teamstats.contrller')
 const pool = require("../config/database");
 
 //jugador//
@@ -97,7 +98,7 @@ router.get('/edit-equipo/:id', async(req, res) =>{
   const equipo = await pool.query('SELECT * FROM equipo WHERE id = ?', [id]);
   res.render('links/edit-equipo', {equipo: equipo[0]});
   });
-  
+
   router.post('/edit-equipo/:id', async (req, res) =>{
   const {id} = req.params;
   const { equipo, dueño, entrenador, fecha } = req.body;
@@ -114,10 +115,7 @@ res.redirect('/links/listaequipo');
 
 
 //estadisticas//
-router.get("/estadisticas", (req, res) => {
-  res.render("links/estadisticas");
-});
-
+router.get("/statistics", statisticsController.getListStatistics);
 router.post("/estadisticas", async (req, res) => {
   const {
     id_jugador,
@@ -187,10 +185,7 @@ router.post('/edit-estadisticas/:id', async(req, res) =>{
 });
 
 //estadisticasequipo//
-router.get("/estadisticasequipo", (req, res) => {
-  res.render("links/estadisticasequipo");
-});
-
+router.get("/teamstats", teamstatsController.getListTeamstats); 
 router.post("/estadisticasequipo", async (req, res) => {
   const { valoracionequipo, quimicaequipo, triunfosequipo } = req.body;
   const newLink = {

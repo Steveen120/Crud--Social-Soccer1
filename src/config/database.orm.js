@@ -16,7 +16,8 @@ mysql.createConnection({
 
 const playersModel = require('../models/player.model');
 const teamsModel = require('../models/team.model');
-
+const statisticsModel = require('../models/statistic.model');
+const teamstatsModel = require('../models/teamstats.model');
 
 const sequelize = new Sequelize(
   'social_soccer_player',
@@ -49,7 +50,8 @@ sequelize.sync({ force: false })
 
 const players = playersModel(sequelize, Sequelize);
 const teams = teamsModel(sequelize, Sequelize);
-
+const statistics = statisticsModel(sequelize, Sequelize);
+const teamstats = teamstatsModel(sequelize, Sequelize);
 
 
 //Relaciones 
@@ -57,5 +59,7 @@ const teams = teamsModel(sequelize, Sequelize);
 
 module.exports = {
   players,
-  teams
+  teams,
+  statistics,
+  teamstats
 }
