@@ -44,6 +44,7 @@ res.render('links/edit-jugador', {jugador: jugador[0]});
 });
 router.post('/edit-jugador/:id', async (req, res) =>{
 const {id} = req.params;
+
 const {
   nombrejugador,
   posicionjugador,
@@ -92,12 +93,13 @@ router.get('/delete-equipo/:id', async(req, res) =>{
   res.redirect('/links/listaequipo');
   });
 
-//editar//
+//editar equipo//
 router.get('/edit-equipo/:id', async(req, res) =>{
   const{ id } = req.params;
   const equipo = await pool.query('SELECT * FROM equipo WHERE id = ?', [id]);
   res.render('links/edit-equipo', {equipo: equipo[0]});
   });
+  
   router.post('/edit-equipo/:id', async (req, res) =>{
   const {id} = req.params;
   const { equipo, dueño, entrenador, fecha } = req.body;
@@ -153,7 +155,38 @@ router.get('/delete-estadisticas/:id', async(req, res) =>{
   await pool.query('DELETE FROM estadisticas WHERE ID = ?', [id]);
   res.redirect('/links/listaestadisticas');
   });
-
+//editar lista//
+router.get('/edit-estadisticas/:id', async(req, res) =>{
+  const{id} = req.query;
+  const estadisticas = await pool.query('SELECT * FROM estadisticas WHERE id = ?', [id]);
+  res.render('links/edit-estadisticas', {estadisticas: estadisticas[0]});
+});
+router.post('/edit-estadisticas/:id', async(req, res) =>{
+  const{id} = req.query;
+  const {
+    id_jugador,
+    id_estadisticas,
+    ritmo,
+    tiro,
+    pase,
+    agilidad,
+    defensa,
+    fisico
+  } = req.body;
+  const newLink = {
+    id_jugador,
+    id_estadisticas,
+    ritmo,
+    tiro,
+    pase,
+    agilidad,
+    defensa,
+    fisico
+  };
+  console.log(newLink);
+  await pool.query('UPDATE estadisticas set ? WHERE id = ?',[newLink, id]);
+  res.redirect('/links/listaestadisticas');
+});
 
 //estadisticasequipo//
 router.get("/estadisticasequipo", (req, res) => {
@@ -181,5 +214,22 @@ router.get('/delete-estadisticasequipo/:id', async(req, res) =>{
   await pool.query('DELETE FROM estadisticasequipo WHERE ID = ?', [id]);
   res.redirect('/links/listaestadisticasequipo');
   });
-
+//Editar estadisticasequipo
+router.get('/edit-estadisticasequipo/:id', async(req, res) => {
+  const{ id } = req.params;
+  const estadisticasequipo = await pool.query('SELECT * FROM estadisticasequipo WHERE id = ?',)
+  res.render('links/edit-estadisticasequipo', {estadisticasequipo: estadisticasequipo[0]});
+});
+  router.post('/edit-estadisticasequipo/:id', async (req, res) =>{
+    const {id} = req.params;
+    const { valoracionequipo, quimicaequipo, triunfosequipo } = req.body;
+    const newLink = {
+      valoracionequipo,
+      quimicaequipo,
+      triunfosequipo,
+    };
+    console.log(newLink);
+    await pool.query('UPDATE estadisticasequipo set ? WHERE id = ?', [newLink, id]);
+    res.redirect('/links/listaestadisticasequipo');
+  });
 module.exports = router;
