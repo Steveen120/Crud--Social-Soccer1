@@ -9,8 +9,8 @@
                     </h3>
                     <p class="m-2">{{teamchemistry }}</p>
                     <p class="m-2">{{teamwins }}</p>
-                    <a href="/links/delete-estadisticasequipo/{{id}}" class="btn btn-danger">Eliminar</a>
-                    <a href="" class="btn btn-secondary">Editar</a>
+                    <a href="/teamstats/delete-teamstats{{id}}" class="btn btn-danger">Eliminar</a>
+                    <a href="/teamstats/edit-teamstat/{{id}}" class="btn btn-secondary">Editar</a>
 
                 </div>
             </div>
@@ -19,7 +19,7 @@
         <div class="col-md-4 mx-auto">
             <div class="card card-body text-center">
                 <p>No hay registro guardados a un </p>
-                <a href="/links/estadisticasEquipo"> Agrega uno haciendo click aqui</a>
+                <a href="/teamstats"> Agrega uno haciendo click aqui</a>
             </div>
         </div>
         {{/each}}
