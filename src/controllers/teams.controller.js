@@ -28,4 +28,6 @@ Teams.deleteTeam = async(req, res) =>{
   res.redirect("/teams/list-teams");
   };
 
+
+  
 module.exports = Teams;

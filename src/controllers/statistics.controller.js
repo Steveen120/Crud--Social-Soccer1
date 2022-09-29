@@ -68,6 +68,7 @@ Statistics.updateStatistic = async (req, res) => {
     physical,
   };
   await pool.query("UPDATE statistics set ? WHERE id = ?", [newLink, id]);
+  req.flash('success','Editado Correctamenta'); 
   res.redirect("/statistics/list-statistics");
 };
 
