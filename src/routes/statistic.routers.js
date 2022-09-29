@@ -18,6 +18,8 @@ router.get('/list-statistics', async (req, res) =>{
 router.get('/delete-statistics/:id', statisticsController.deleteStatistic);
 
 //editar//
+router.get('/edit-statistic/:id', statisticsController.getStatistic );
+router.post('/edit-statistic/:id', statisticsController.updateStatistic);
 
 
 

@@ -55,6 +55,7 @@ app.use('/links',require('./routes/links'));
 app.use('/players',require('./routes/players.routers'));
 app.use('/teams',require('./routes/teams.routers'));
 app.use('/statistics',require('./routes/statistic.routers'));
+app.use('/teamstats',require('./routes/teamstats.router'))
 
 
 

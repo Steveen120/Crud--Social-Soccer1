@@ -61,6 +61,9 @@ teams.belongsTo(players)
 teamstats.hasMany(teams)
 teams.belongsTo(teamstats)
 
+statistics.hasMany(players)
+players.belongsTo(statistics)
+
 module.exports = {
   players,
   teams,
