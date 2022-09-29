@@ -19,10 +19,10 @@ Teams.postTeams = async (req, res) => {
   res.redirect("/teams/list-teams");
 };
 
-Teams.deleteTeams = async (req, res) => {
+Teams.deleteTeam = async(req, res) =>{
   const { id } = req.params;
-  await pool.query("DELETE FROM teams WHERE ID = ?", [id]);
+  await pool.query("DELETE FROM teams WHERE ID = ?", [id]);    
   res.redirect("/teams/list-teams");
-};
+  };
 
 module.exports = Teams;

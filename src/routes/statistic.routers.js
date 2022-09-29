@@ -7,15 +7,15 @@ const teamstatsController = require('../controllers/teamstats.controller')
 const pool = require("../config/database");
 
 //jugador//
-router.get("/", teamsController.getListTeams);
-router.post("/team", teamsController.postTeams);
+router.get("/", statisticsController.getListStatistics );
+router.post("/statistic", statisticsController.postStatistic );
 //mostrara las listas//
-router.get('/list-teams', async (req, res) =>{
-  const teams = await pool.query('SELECT * FROM  teams');  
-  res.render('links/team/list-teams', {teams})
+router.get('/list-statistics', async (req, res) =>{
+  const statistics = await pool.query('SELECT * FROM  statistics');  
+  res.render('links/statistic/list-statistics', {statistics})
 })
 //eliminar jugador//
-router.get('/delete-teams/:id', teamsController.deleteTeam);
+router.get('/delete-statistics/:id', statisticsController.deleteStatistic);
 
 //editar//
 
@@ -24,6 +24,3 @@ router.get('/delete-teams/:id', teamsController.deleteTeam);
 
 
 module.exports = router;
-
-
-

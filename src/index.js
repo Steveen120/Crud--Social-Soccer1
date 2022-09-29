@@ -39,8 +39,9 @@ app.use(flash());
 app.use(require('./routes'));
 app.use(require('./routes/authentication'));
 app.use('/links',require('./routes/links'));
-app.use('/players',require('./routes/players.router'));
-app.use('/temas',require('./routes/teams.router'));
+app.use('/players',require('./routes/players.routers'));
+app.use('/teams',require('./routes/teams.routers'));
+app.use('/statistics',require('./routes/statistic.routers'));
 
 
 

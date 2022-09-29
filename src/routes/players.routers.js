@@ -18,7 +18,8 @@ router.get('/list-players', async (req, res) =>{
 router.get('/delete-players/:id', playersController.deletePlayer);
 
 //editar//
-
+router.get('/edit-player/:id', playersController.getPlayer);
+router.post('/edit-player/:id', playersController.updatePlayer);
 
 
 

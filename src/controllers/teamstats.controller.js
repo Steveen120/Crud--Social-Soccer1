@@ -6,6 +6,6 @@ Teamstats.getListTeamstats = (req, res) => {
     res.render("links/estadisticasequipo");
 };
 
-T
+
 
 module.exports=Teamstats
