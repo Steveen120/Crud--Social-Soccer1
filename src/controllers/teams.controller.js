@@ -23,7 +23,8 @@ Teams.postTeams = async (req, res) => {
 
 Teams.deleteTeam = async(req, res) =>{
   const { id } = req.params;
-  await pool.query("DELETE FROM teams WHERE ID = ?", [id]);    
+  await pool.query("DELETE FROM teams WHERE ID = ?", [id]);
+  req.flash('success','Eliminado correctamente');    
   res.redirect("/teams/list-teams");
   };
 

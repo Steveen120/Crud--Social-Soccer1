@@ -31,7 +31,8 @@ Players.postPlayer = async(req, res) =>{
 
   Players.deletePlayer = async(req, res) =>{
     const { id } = req.params;
-    await pool.query("DELETE FROM players WHERE ID = ?", [id]);    
+    await pool.query("DELETE FROM players WHERE ID = ?", [id]);
+    req.flash('success','Eliminado correctamente');
     res.redirect("/players/list-players");
     };
 
