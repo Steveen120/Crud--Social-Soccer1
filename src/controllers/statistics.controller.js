@@ -1,6 +1,8 @@
 const pool = require("../config/database");
 const statistics = require("../models/statistic.model");
 
+
+
 const Statistics={}
 
 Statistics.getListStatistics = (req, res) => {
@@ -31,6 +33,8 @@ Statistics.postStatistic = async(req, res) =>{
       physical
     };
     await pool.query('INSERT INTO statistics set ?', [newLink]);
+      //Flash
+    req.flash('success','Agregado Correctamenta');
     res.redirect("/statistics/list-statistics");
   };
 
@@ -39,7 +43,8 @@ Statistics.postStatistic = async(req, res) =>{
     const { id } = req.params;
     await pool.query("DELETE FROM statistics WHERE ID = ?", [id]);    
     res.redirect("/statistics/list-statistics");
-    };
+  };
+
 
 
 

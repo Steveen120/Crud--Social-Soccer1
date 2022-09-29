@@ -23,6 +23,8 @@ Players.postPlayer = async(req, res) =>{
       playerage
     };
     await pool.query('INSERT INTO players set ?', [newLink]);
+     //Flash
+    req.flash('success','Agregado Correctamenta');
     res.redirect("/players/list-players");
   };
 
@@ -37,6 +39,7 @@ Players.getPlayer = async (req, res) => {
   const { id } = req.params;
   const player = await pool.query('SELECT * FROM players WHERE id = ?', [id]);
   res.render('links/player/edit-players', {player: player[0]});
+  
 };
 Players.updatePlayer = async (req, res) => {
   const { id } = req.params;

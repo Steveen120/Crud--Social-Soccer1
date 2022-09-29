@@ -16,6 +16,8 @@ Teams.postTeams = async (req, res) => {
     foundation,
   };
   await pool.query("INSERT INTO teams set ?", [newLink]);
+  //Flash
+  req.flash('success','Agregado Correctamenta');
   res.redirect("/teams/list-teams");
 };
 

@@ -61,6 +61,9 @@ router.post("/estadisticasequipo", async (req, res) => {
     teamwins,
   };
   await pool.query('INSERT INTO estadisticasequipo set ?', [newLink]);
+
+  //Flash
+  req.flash('success','Links saved');
   res.redirect("listaestadisticasequipo");
 });
 //mostrara las listas//
