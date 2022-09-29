@@ -37,7 +37,7 @@ router.get('/statistic/list-statistics', async (req, res) =>{
   res.render('links/statistic/list-statistics', {statistics})
 })
 //eliminar//
-router.get('/delete-estatistics/:id', statisticsController.deleteStatistic);
+router.get('/delete-statistcs/:id', statisticsController.deleteStatistic);
 //editar//
 
 
