@@ -29,12 +29,14 @@ Statistics.postStatistic = async (req, res) => {
     physical,
   };
   await pool.query("INSERT INTO statistics set ?", [newLink]);
+  req.flash('success','Agregado Correctamenta');
   res.redirect("/statistics/list-statistics");
 };
 
 Statistics.deleteStatistic = async (req, res) => {
   const { id } = req.params;
   await pool.query("DELETE FROM statistics WHERE ID = ?", [id]);
+  req.flash('success','Eliminado correctamente');
   res.redirect("/statistics/list-statistics");
 };
 

@@ -15,11 +15,13 @@ Teamstats.postTeamstat = async(req,res)=>{
       teamwins,
     };
     await pool.query('INSERT INTO teamstats set ?', [newLink]);
+    req.flash('success','Agregado Correctamenta');
     res.redirect("/teamstats/list-teamstats");
 };
  Teamstats.deleteTeamstat = async(req,res) => {
     const { id } = req.params;
-    await pool.query("DELETE FROM teamstats WHERE ID = ?", [id]);   
+    await pool.query("DELETE FROM teamstats WHERE ID = ?", [id]);
+    req.flash('success','Eliminado correctamente');   
     res.redirect("/teamstats/list-teamstats");    
  };
 
