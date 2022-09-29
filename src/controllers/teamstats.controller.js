@@ -19,9 +19,9 @@ Teamstats.postTeamstat = async(req,res)=>{
 };
  Teamstats.deleteTeamstat = async(req,res) => {
     const { id } = req.params;
-    await pool.query("DELETE FROM teamstats WHERE ID = ?", [id]);    
-    
- }
+    await pool.query("DELETE FROM teamstats WHERE ID = ?", [id]);   
+    res.redirect("/teamstats/list-teamstats");    
+ };
 
 
 module.exports=Teamstats
