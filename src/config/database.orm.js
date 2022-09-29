@@ -18,6 +18,7 @@ const playersModel = require('../models/player.model');
 const teamsModel = require('../models/team.model');
 const statisticsModel = require('../models/statistic.model');
 const teamstatsModel = require('../models/teamstats.model');
+const Statistics = require('../controllers/statistics.controller');
 
 const sequelize = new Sequelize(
   'social_soccer_player',
@@ -60,6 +61,9 @@ teams.belongsTo(players)
 
 teamstats.hasMany(teams)
 teams.belongsTo(teamstats)
+
+statistics.hasMany(players)
+players.belongsTo(statistics)
 
 module.exports = {
   players,
