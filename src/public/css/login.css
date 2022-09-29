@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -26,7 +27,7 @@ span {
 }
 
 a {
-    color: rgb(212, 49, 49);
+    color: #333;
     font-size: 14px;
     text-decoration: none;
     margin: 15px 0;
@@ -61,7 +62,7 @@ button.ghost {
 }
 
 button.ghost:hover {
-    background-color: #f7d2d2;
+    background-color: #FFFFFF;
     color: #0E1119;
     cursor: pointer;
 }
