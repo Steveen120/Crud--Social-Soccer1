@@ -6,13 +6,6 @@ const statisticsController = require('../controllers/statistics.controller');
 const teamstatsController = require('../controllers/teamstats.controller')
 const pool = require("../config/database");
 
-
-
-
-
-
-
-
 //equipo//
 router.get("/team/teams", teamsController.getListTeams);
 router.post("/team/teams", teamsController.postTeams);
