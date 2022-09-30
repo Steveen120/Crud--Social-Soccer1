@@ -18,7 +18,8 @@ router.get('/list-teams', async (req, res) =>{
 router.get('/delete-teams/:id', teamsController.deleteTeam);
 
 //editar//
-
+router.get('/edit-team/:id', teamsController.getteam);
+router.post('/edit-team/:id', teamsController.updateTeam);
 
 
 

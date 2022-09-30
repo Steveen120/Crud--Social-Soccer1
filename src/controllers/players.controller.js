@@ -28,7 +28,6 @@ Players.postPlayer = async(req, res) =>{
     res.redirect("/players/list-players");
   };
 
-
   Players.deletePlayer = async(req, res) =>{
     const { id } = req.params;
     await pool.query("DELETE FROM players WHERE ID = ?", [id]);
@@ -49,6 +48,5 @@ Players.updatePlayer = async (req, res) => {
   };
   await pool.query('UPDATE players set ? WHERE id = ?', [newLink, id]);  
   res.redirect('/players/list-players');
-  
 };
 module.exports=Players

@@ -27,5 +27,19 @@ Teams.deleteTeam = async(req, res) =>{
   req.flash('success','Eliminado correctamente');    
   res.redirect("/teams/list-teams");
   };
-
+  
+Teams.getteam = async (req, res) => {
+    const { id } = req.params;
+    const team = await pool.query('SELECT * FROM teams WHERE id = ?', [id]);
+    res.render('links/team/edit-teams', {team: team[0]});
+    
+};
+Teams.updateTeam = async (req, res) => {
+    const { id } = req.params;
+    const { squad, boss , coach, foundation } = req.body;
+    const newLink = {squad, boss, coach, foundation    
+    };
+    await pool.query('UPDATE teams set ? WHERE id = ?', [newLink, id]);  
+    res.redirect('/teams/list-teams');
+};  
 module.exports = Teams;
