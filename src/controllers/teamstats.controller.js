@@ -24,6 +24,20 @@ Teamstats.postTeamstat = async(req,res)=>{
     req.flash('success','Eliminado correctamente');   
     res.redirect("/teamstats/list-teamstats");    
  };
-
+ Teamstats.getTeamstat = async (req, res) => {
+  const { id } = req.params;
+  const teamstat = await pool.query('SELECT * FROM teamstats WHERE id = ?', [id]);
+  res.render('links/teamstat/edit-teamstats', {teamstat: teamstat[0]});
+  
+};
+Teamstats.updateTeamstat = async (req, res) => {
+  const { id } = req.params;
+  const { teamvaluation, teamchemistry , teamwins, } = req.body;
+  const newLink = {teamvaluation, teamchemistry , teamwins,       
+  };
+  await pool.query('UPDATE teamstats set ? WHERE id = ?', [newLink, id]);
+  req.flash('success','Editado Correctamenta');  
+  res.redirect('/teamstats/list-teamstats');
+};
 
 module.exports=Teamstats

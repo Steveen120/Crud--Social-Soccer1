@@ -18,7 +18,8 @@ router.get('/list-teamstats', async (req, res) =>{
 router.get('/delete-teamstats/:id', teamstatsController.deleteTeamstat);
 
 //editar//
-
+router.get('/edit-teamstat/:id', teamstatsController.getTeamstat );
+router.post('/edit-teamstat/:id', teamstatsController.updateTeamstat );
 
 
 

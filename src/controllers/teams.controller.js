@@ -40,6 +40,7 @@ Teams.updateTeam = async (req, res) => {
     const newLink = {squad, boss, coach, foundation    
     };
     await pool.query('UPDATE teams set ? WHERE id = ?', [newLink, id]);  
+    req.flash('success','Editado Correctamenta'); 
     res.redirect('/teams/list-teams');
 };  
 module.exports = Teams;

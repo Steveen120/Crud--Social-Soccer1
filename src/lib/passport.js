@@ -2,6 +2,10 @@ const passport = require('passport');
 const passpor = require('passport'); 
 const LocalStrategy = require('passport-local').Strategy;
 
+const pool = require ('../config/database');
+/*const helpers = require('../lib/helpers');*/
+
+
 
 
 passport.use('local.signup', new LocalStrategy ({
@@ -16,6 +20,9 @@ passport.use('local.signup', new LocalStrategy ({
         fullname
     };
     
+    newUser.password = await helpers.encryptPassword(password)
+    const result = await pool.query('INSERT INTO users SET ?', [newUser]);
+    console.log(result)
 }));
 
 //password.serializeUser((usr,done) => {
