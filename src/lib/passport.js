@@ -3,7 +3,8 @@ const passpor = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 const pool = require ('../config/database');
-/*const helpers = require('../lib/helpers');*/
+const helpers = require('../lib/helpers');
+
 
 
 
@@ -22,9 +23,15 @@ passport.use('local.signup', new LocalStrategy ({
     
     newUser.password = await helpers.encryptPassword(password)
     const result = await pool.query('INSERT INTO users SET ?', [newUser]);
-    console.log(result)
+    newUser.id = result.insertId;
+    return done(null, newUser);
 }));
 
-//password.serializeUser((usr,done) => {
+ passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
 
-//});
+passport.deserializeUser( async ( id, done)  => {
+   const rows = await pool.query('SELECT * FORM users WHERE id = ?', [id]);
+   done(null, rows[0]);
+});

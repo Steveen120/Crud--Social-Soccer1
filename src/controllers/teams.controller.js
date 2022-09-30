@@ -1,6 +1,7 @@
 const pool = require("../config/database");
 const teams = require("../models/team.model");
 
+
 const Teams = {};
 
 Teams.getListTeams = (req, res) => {

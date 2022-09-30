@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypyjs');
+const bcrypt = require('bcryptjs');
 
 const helpers = {};
 
