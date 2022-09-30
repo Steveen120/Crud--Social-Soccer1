@@ -46,7 +46,8 @@ Players.updatePlayer = async (req, res) => {
   const { playerposition, playername , surnameplayer, playerheight, playerage } = req.body;
   const newLink = {playerposition, playername , surnameplayer, playerheight, playerage      
   };
-  await pool.query('UPDATE players set ? WHERE id = ?', [newLink, id]);  
+  await pool.query('UPDATE players set ? WHERE id = ?', [newLink, id]);
+  req.flash('success','Editado Correctamenta');  
   res.redirect('/players/list-players');
 };
 module.exports=Players
