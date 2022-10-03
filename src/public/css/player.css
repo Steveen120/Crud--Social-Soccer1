@@ -3,10 +3,10 @@ body{
 }
   
   #logo {
-	background: url();
+	background-image: url(/img/social-soccer.png);
 	width: 100px;
-	height: 100px;
-	border-radius: 50%;
+	height: 10px;
+	border-radius: 20%;
 	margin: 0 auto;
 
   }
