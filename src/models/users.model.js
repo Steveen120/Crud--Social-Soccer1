@@ -6,9 +6,9 @@ const users =(sequelize, type) =>{
             autoIncrement: true,
         },
 
-        fullname: type.STRING, 
+        fullname: type.STRING(90), 
         username: type.STRING,
-        password: type.STRING,
+        password: type.STRING(90),
 
         createUsers:{
             type: 'TIMESTAMP',

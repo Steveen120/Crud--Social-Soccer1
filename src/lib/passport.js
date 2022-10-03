@@ -1,10 +1,12 @@
 const passport = require('passport');
-const passpor = require('passport'); 
 const LocalStrategy = require('passport-local').Strategy;
 
 const pool = require ('../config/database');
 const helpers = require('../lib/helpers');
 
+/*passport.use('local.signin', new LocalStrategy({
+
+}));*/
 
 
 
@@ -27,7 +29,7 @@ passport.use('local.signup', new LocalStrategy ({
     return done(null, newUser);
 }));
 
- passport.serializeUser((user, done) => {
+passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
