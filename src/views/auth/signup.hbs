@@ -1,49 +1,32 @@
-<link rel="stylesheet" href="/css/login.css">
-<div class="container" id="container">
-    <div class="form-container sign-up-container">
-        
-        <form action="/signup" method="POST">
-            <h1>Crear una cuenta</h1>
-            <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form>
+            <div class="user-box">
+                <input type="text" name="Username" required="">
+                <label>Username</label>
             </div>
-            <span>O use su correo electrónico para registrarse</span>
-            <input type="text" name="fullname" placeholder="Tu Nombre completo:" />
-            <input type="text" name="username" placeholder="Nombre del Usuario:" />
-            <input type="password" name="password" placeholder="Contraseña:" />
-            <button>Registrarse</button>
+            <div class="class-user-box">
+                <input type="password" name="" required="">
+                <label>Password</label>
+            </div>
+            <div class="button-forn">
+                <a id=" submit" href="#"submit></a>
+                <div id="register">
+                    Dont have an account ?
+                    <a href="#">register</a>
+                </div>
+            </div>
         </form>
     </div>
-    <div class="form-container log-in-container">        
-        <form action="/signin" method="POST">
-            <h1>Iniciar sesión</h1>
-            <div class="social-container">
-                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <span>Use su correo electrónico</span>
-            <input type="text" name="username" placeholder="username:" />
-            <input type="password" name="password" placeholder="Contraseña:" />
-            <a href="#">¿Olvidaste tu contraseña?</a>
-            <button>Iniciar sesión</button>
-        </form>
-    </div>
-    <div class="overlay-container">
-        <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <h1>Bienvenido</h1>
-                <p>¿Ya tienes una cuenta? Iniciar sesión</p>
-                <button class="ghost" id="logIn">Iniciar sesión</button>
-            </div>
-            <div class="overlay-panel overlay-right">
-                <h1>¡Hola Comunidad :D!</h1>
-                <p>¿No tienes una cuenta? Regístrate gratis</p>
-                <button class="ghost" id="signUp">Registrarse</button>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="/js/login.js"></script>
+</body>
+</html>
