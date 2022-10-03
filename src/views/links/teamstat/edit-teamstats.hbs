@@ -1,11 +1,14 @@
-
+<link rel="stylesheet" href="/css/player.css">
     <div class="row">
         <div class="col-md-4 mx-auto">
             <div class="card ">
                 <div class="card-body">
                     <form action="/teamstats/edit-teamstat/{{teamstat.id}}" method="POST">
-                        <h5 class="mt-3">Valoracion del Equipo</h5>
-                        <div name="teamvaluation">
+                    <div id="title">Crear</div>
+                    <div id="sub-title">Experiencia</div>
+                    <div id="input">
+                         <div id="inputBox">
+                            <label>Valoracion del Equipo</label>
                             <select name="teamvaluation" aria-label="Default select example" class="form-select">
                                 <option value="Malo">Malo</option>
                                 <option value="Regular">Regular</option>
@@ -14,18 +17,18 @@
                                 <option value="Estrella">Estrella</option>
                             </select>
                         </div>
-                        <h5 class="mt-3">Quimica del Equipo</h5>
-                        <div class="form-group">
+                        <div id="inputBox">
+                            <label>Quimica del Jugador</label>
                             <input type="text" value="{{teamstat.teamchemistry}}" name="teamchemistry" class="form-control"
                                 placeholder="Quimica del Equipo">
                         </div>
-                        <h5 class="mt-3">Triunfos Del Equipo</h5>
-                        <div class="form-group">
+                        <div id="inputBox">
+                            <label>Triunfos del Jugador</label>
                             <input type="text" value="{{teamstat.teamwins}}" name="teamwins" class="form-control"
                                 placeholder="Triunfos Del Equipo">
                         </div>
-                        <div class="form-group mt-3 d-grid">
-                            <button type="submit" class="btn btn-success btn-block"> Guardar</button>
+                        <div id="inputBox">
+                            <input type="submit" value="Guardar"/>
                         </div>
                     </form>
                 </div>
