@@ -3,44 +3,36 @@
 </style>
 
 <link rel="stylesheet" href="/css/player.css">
-<div class="row">
-    <div class="col-md-4 mx-auto">
-        <div class="card ">
-            <div class="card-body">
-                <form action="/players/player" method="POST">
-                    <div id="title">Crear</div>
-                    <div id="sub-title">Experiencia</div>
-                    <div id="input">
-                        <div id="inputBox">
-                            <label>Nombre del Jugador</label>
-                             <input type="text" name="playername" class="form-control"
-                                placeholder="Nombre del Jugador" autofocus/>
-                        </div>
-                        <div id="inputBox">
-                            <label>Apellido del jugador</label>
-                             <input type="text" name="surnameplayer" class="form-control"
-                                placeholder="Apellido del jugador"/>
-                        </div>
-                         <div id="inputBox">
-                            <label>Posición del Jugador</label>
-                            <input type="text" class="form-control" name="playerposition"
-                                placeholder="Posición del Jugador"/>
-                        </div>
-                         <div id="inputBox">
-                            <label>Altura del jugador</label>
-                            <input type="text" name="playerheight" class="form-control"
-                                placeholder="Altura del jugador"/>
-                        </div>
-                         <div id="inputBox">
-                            <label>Edad del jugador</label>
-                             <input type="text" name="playerage" class="form-control" placeholder="Edad del jugador"/>
-                        </div>
-                        <div id="inputBox">
-                            <input type="submit" value="Guardar" />
-                        </div>
-                    </div>
-                </form>
-            </div>
+<form action="/players/player" method="POST">
+    <div id="title">Agregar</div>
+    <div id="sub-title">Jugador</div>
+    <div id="input">
+        <div id="inputBox">
+            <label>Nombre del Jugador</label>
+            <input type="text" name="playername" class="form-control" placeholder="Nombre del Jugador" autofocus />
+        </div>
+        <div id="inputBox">
+            <label>Apellido del jugador</label>
+            <input type="text" name="surnameplayer" class="form-control" placeholder="Apellido del jugador" />
+        </div>
+        <div id="inputBox">
+            <label>Posición del Jugador</label>
+            <input type="text" class="form-control" name="playerposition" placeholder="Posición del Jugador" />
+        </div>
+        <div id="inputBox">
+            <label>Altura del jugador</label>
+            <input type="text" name="playerheight" class="form-control" placeholder="Altura del jugador" />
+        </div>
+        <div id="inputBox">
+            <label>Edad del jugador</label>
+            <input type="text" name="playerage" class="form-control" placeholder="Edad del jugador" />
+        </div>
+        <div id="inputBox">
+            <input type="submit" value="Guardar" />
         </div>
     </div>
+</form>
+</div>
+</div>
+</div>
 </div>
