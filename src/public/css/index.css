@@ -1,3 +1,6 @@
+body{
+	background: rgb(196, 255, 247);
+}
 .contenedor {
     padding: 60px 0;
     width: 90%;
@@ -160,7 +163,7 @@ main .sobre-nosotros{
 }
 
 .cards .card{
-    background: #4d0686;
+    background: #8848bd;
     display: flex;
     width: 46%;
     height: 200px;

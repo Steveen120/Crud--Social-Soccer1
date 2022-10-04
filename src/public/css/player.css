@@ -1,14 +1,13 @@
 body{
-	background: rgb(rgb(255, 255, 255), rgb(35, 169, 209), rgb(255, 255, 255));
+	background: bisque;
 }
   
   #logo {
 	background-image: url(/img/social-soccer.png);
-	width: 100px;
-	height: 10px;
-	border-radius: 20%;
+	width: 220px;
+	height: 150px;
+	border-radius: 5%;
 	margin: 0 auto;
-
   }
   title {
 	color: #006c9c;
