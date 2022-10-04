@@ -21,7 +21,4 @@ router.get('/delete-teamstats/:id', teamstatsController.deleteTeamstat);
 router.get('/edit-teamstat/:id', teamstatsController.getTeamstat );
 router.post('/edit-teamstat/:id', teamstatsController.updateTeamstat );
 
-
-
-
 module.exports = router;

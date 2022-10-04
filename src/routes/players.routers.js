@@ -21,7 +21,4 @@ router.get('/delete-players/:id', playersController.deletePlayer);
 router.get('/edit-player/:id', playersController.getPlayer);
 router.post('/edit-player/:id', playersController.updatePlayer);
 
-
-
-
 module.exports = router;

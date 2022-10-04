@@ -21,8 +21,4 @@ router.get('/delete-statistics/:id', statisticsController.deleteStatistic);
 router.get('/edit-statistic/:id', statisticsController.getStatistic );
 router.post('/edit-statistic/:id', statisticsController.updateStatistic);
 
-
-
-
-
 module.exports = router;

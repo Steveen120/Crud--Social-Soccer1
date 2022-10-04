@@ -21,9 +21,6 @@ router.get('/delete-teams/:id', teamsController.deleteTeam);
 router.get('/edit-team/:id', teamsController.getteam);
 router.post('/edit-team/:id', teamsController.updateTeam);
 
-
-
-
 module.exports = router;
 
 
