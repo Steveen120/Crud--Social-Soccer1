@@ -1,29 +1,17 @@
-<link rel="stylesheet" href="/css/cards.css">    
-    <div class="row">
-        {{#each players}}
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card text-uppercase">
-                        {{playername}}
-                    </h3>
-                    <p class="m-2">{{surnameplayer}}</p>
-                    <p class="m-2">{{playerposition}}</p>
-                    <p class="m-2">{{playerheight}}</p>
-                    <p class="m-2">{{playerage}}</p>
-                    <center>
-                        <a href="/players/delete-players/{{id}}" class="danger">Eliminar</a>
-                        <a href="/players/edit-player/{{id}}" class="secondary">Editar</a>
-                    </center>
-                </div>
-            </div>
-        </div>
-        {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>No hay registro guardados a un </p>
-                <a href="/players"> Agrega uno haciendo click aqui</a>
-            </div>
-        </div>
-        {{/each}}
-    </div>
+<link rel="stylesheet" href="/css/cards.css">
+{{#each players}}
+<div class="card-body">
+    <p>{{playername}}</p>
+    <p>{{surnameplayer}}</p>
+    <p>{{playerposition}}</p>
+    <p>{{playerheight}}</p>
+    <p>{{playerage}}</p>
+    <center>
+        <a href="/players/delete-players/{{id}}" class="danger">Eliminar</a>
+        <a href="/players/edit-player/{{id}}" class="secondary">Editar</a>
+    </center>
+    {{else}}
+    <center <p>No hay registro guardados a un </p>
+        <a href="/players"> Agrega uno haciendo click aqui</a>
+    </center>
+    {{/each}}

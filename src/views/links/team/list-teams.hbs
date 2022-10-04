@@ -1,27 +1,18 @@
-
-<link rel="stylesheet" href="/css/cards.css"> 
-    <div class="row">
-        {{#each teams}}   
-                <div class="card-body">                    
-                    <h3 class="card text-uppercase">
-                        {{squad}}
-                    </h3>
-                    <p class="m-2">{{boss}}</p>
-                    <p class="m-2">{{coach}}</p>
-                    <p class="m-2">{{timeago fecha}}</p>
-                    <center>
-                        <a href="/players/delete-players/{{id}}" class="danger">Eliminar</a>
-                        <a href="/players/edit-player/{{id}}" class="secondary">Editar</a>
-                    </center>
-                </div>
-            </div>
-        </div>
-        {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>No hay registro guardados a un </p>
-                <a href="/teams"> Agrega uno haciendo click aqui</a>
-            </div>
-        </div>
-        {{/each}}       
-    </div>
+<link rel="stylesheet" href="/css/cards.css">
+{{#each teams}}
+<div class="card-body">
+    <p>{{squad}}</p>
+    <p>{{boss}}</p>
+    <p>{{coach}}</p>
+    <p>{{timeago fecha}}</p>
+    <center>
+        <a href="/teams/delete-teams/{{id}}" class="danger">Eliminar</a>
+        <a href="/teams/edit-team/{{id}}" class="secondary">Editar</a>
+    </center>
+</div>
+</div>
+</div>
+{{else}}
+<p>No hay registro guardados a un </p>
+<a href="/teams"> Agrega uno haciendo click aqui</a>
+{{/each}}

@@ -1,28 +1,22 @@
-<link rel="stylesheet" href="/css/cards.css"> 
-    <div class="row">
-        {{#each teamstats}}
-        <div class="col-md-3">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h3 class="card text-uppercase">
-                        {{teamvaluation}}
-                    </h3>
-                    <p class="m-2">{{teamchemistry }}</p>
-                    <p class="m-2">{{teamwins }}</p>
-                    <center>
-                        <a href="/players/delete-players/{{id}}" class="danger">Eliminar</a>
-                        <a href="/players/edit-player/{{id}}" class="secondary">Editar</a>
-                    </center>
-                </div>
-            </div>
-        </div>
-        {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
-                <p>No hay registro guardados a un </p>
-                <a href="/teamstats"> Agrega uno haciendo click aqui</a>
-            </div>
-        </div>
-        {{/each}}
+<link rel="stylesheet" href="/css/cards.css">
+{{#each teamstats}}
+<div class="card-body">
+    <p>
+        {{teamvaluation}}
+    </p>
+    <p>{{teamchemistry }}</p>
+    <p>{{teamwins }}</p>
+    <center>
+        <a href="/teamstats/delete-teamstats/{{id}}" class="danger">Eliminar</a>
+        <a href="/teamstats/edit-teamstat/{{id}}" class="secondary">Editar</a>
+    </center>
+</div>
+</div>
+</div>
+{{else}}
+<p>No hay registro guardados a un </p>
+<a href="/teamstats"> Agrega uno haciendo click aqui</a>
 
-    </div>
+{{/each}}
+
+</div>

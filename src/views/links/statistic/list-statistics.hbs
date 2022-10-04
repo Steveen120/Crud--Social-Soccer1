@@ -1,33 +1,26 @@
 <link rel="stylesheet" href="/css/cards.css"> 
-    <div class="row">
         {{#each statistics}}
-        <div class="col-md-3">
-            <div class="card text-center">
                 <div class="card-body">
-                    <h3 class="card text-uppercase">
-                        {{id_player}}
-                    </h3>
-                    <p class="m-2">{{id_statistic }}</p>
-                    <p class="m-2">{{swing }}</p>
-                    <p class="m-2">{{threw }}</p>
-                    <p class="m-2">{{happens }}</p>
-                    <p class="m-2">{{agility}}</p>
-                    <p class="m-2">{{defending}}</p>
-                    <p class="m-2">{{physical }}</p>
+                    <p>{{id_player}}</p>
+                    <p >{{id_statistic }}</p>
+                    <p >{{swing }}</p>
+                    <p >{{threw }}</p>
+                    <p >{{happens }}</p>
+                    <p >{{agility}}</p>
+                    <p >{{defending}}</p>
+                    <p >{{physical }}</p>
                     <center>
-                        <a href="/players/delete-players/{{id}}" class="danger">Eliminar</a>
-                        <a href="/players/edit-player/{{id}}" class="secondary">Editar</a>
+                        <a href="/statistics/delete-statistics/{{id}}" class="danger">Eliminar</a>
+                        <a href="/statistics/edit-statistic/{{id}}" class="secondary">Editar</a>
                     </center>
                 </div>
             </div>
         </div>
         {{else}}
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body text-center">
+
                 <p>No hay registro guardados a un </p>
                 <a href="/statistics"> Agrega uno haciendo click aqui </a>
-            </div>
-        </div>
+
         {{/each}}
 
     </div>
